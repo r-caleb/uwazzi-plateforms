@@ -15,8 +15,16 @@ const ProvinceScreen = () => {
       nom: "Equateur",
       number: 150,
     },
-    { id: 3, nom: "Haut-Katanga", number: 150 },
-    { id: 4, nom: "Kinshasa", number: 300 },
+    {
+      id: 3,
+      nom: "Haut-Katanga",
+      number: 150,
+    },
+    {
+      id: 4,
+      nom: "Kinshasa",
+      number: 300,
+    },
     {
       id: 5,
       nom: "Bas-Uele",
