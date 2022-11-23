@@ -1,0 +1,9 @@
+.app_container {
+  display: flex;
+  margin-top: 10vh;
+}
+
+.app__main {
+  margin-top: 5vh;
+  width: 100%;
+}/*# sourceMappingURL=App.css.map */

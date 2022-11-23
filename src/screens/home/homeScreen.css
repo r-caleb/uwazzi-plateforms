@@ -1,0 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;0,500;0,700;0,900;1,400;1,500;1,700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background-color: #F5F6FA;
+  background-attachment: fixed;
+  color: #6F767E;
+  font-family: "Roboto", Courier, monospace;
+  letter-spacing: 0.1px;
+}
+
+.home__banner img {
+  height: 400px;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+.home__news {
+  box-shadow: 0px 0px 5px 5px rgba(111, 111, 117, 0.2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto !important;
+  width: 90%;
+  border-radius: 30px;
+}
+.home__news .col:nth-child(2) {
+  background-color: #00A2DD;
+  color: #F5F6FA;
+  padding: 1rem;
+  border-radius: 0px 30px 30px 0px;
+}
+.home .voir__plus {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.home h3 {
+  padding: 1.7rem;
+  font-weight: bold;
+  font-size: 18px;
+}
+.home__candidate .col {
+  display: flex;
+  justify-content: space-evenly;
+}
+.home__candidate .col img {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+}
+.home__candidate .voir__candidat {
+  text-align: end;
+  padding: 1rem 5rem;
+  color: #00A2DD;
+}
+.home .outils {
+  background-color: #C2D3DF;
+}
+.home .outils img {
+  width: 300px;
+  height: 300px;
+  border-radius: 0%;
+}
+.home .outils .card__map {
+  display: flex;
+  flex-direction: column;
+}/*# sourceMappingURL=homeScreen.css.map */

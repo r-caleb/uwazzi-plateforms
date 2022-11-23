@@ -26,7 +26,7 @@
        width: 0px;
     }
     scrollbar-width: none;
- 
+
     span {
        margin-right: 1rem;
        padding: 0.5rem;
@@ -55,10 +55,44 @@
    margin-bottom: 20px;
    text-align: center;
 }
+a{
+   text-decoration: none;
+   color: $text-color;
+   &:hover{
+       color:$blue-color;
+   }
+}
 .data{
    background-color: $secondary-color;
    padding: 0.6rem;
    margin-bottom: 2px;
    text-align: center;
+}
+}
+.back{
+   color: $blue-color;
+   padding: 2rem;
+   cursor: pointer;
+}
+.card_candidat{
+ 
+   border: 1px solid $text-color;
+   padding: 2rem;
+   margin: 2rem;
+   .pictures{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+   .candidat{
+      width: 250px;
+      height: 250px;
+      border-radius: 50%;
+   }
+   .parti{
+      width: 100px;
+      height: 100px;
+      padding: 1rem 0;
+   }
 }
 }

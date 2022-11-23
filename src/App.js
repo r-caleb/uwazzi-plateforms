@@ -10,6 +10,8 @@ import ProvinceScreen from "./screens/center/ProvinceScreen";
 import MapScreen from "./screens/map/MapScreen";
 import StatScreen from "./screens/statistique/StatScreen";
 import InfoScreen from "./screens/infos/InfoScreen";
+import HomeScreen from "./screens/home/HomeScreen";
+import OneCandidatScreen from "./screens/candidats/OneCandidatScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -32,12 +34,27 @@ const Layout = ({ children }) => {
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Layout>APP</Layout>} />
+      <Route
+        path="/"
+        element={
+          <Layout>
+            <HomeScreen />
+          </Layout>
+        }
+      />
       <Route
         path="/candidat/lists"
         element={
           <Layout>
             <CandidatScreen />
+          </Layout>
+        }
+      />
+      <Route
+        path="/candidat/lists/:nom"
+        element={
+          <Layout>
+            <OneCandidatScreen />
           </Layout>
         }
       />

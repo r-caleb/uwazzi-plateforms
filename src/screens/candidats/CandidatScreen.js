@@ -1,129 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import "./candidatScreen.scss";
 
 const keywords = [
   "Tout",
-  "Présidentiel",
-  "Deputé National",
-  "Deputé Provincial",
+  "Presidentiel",
+  "Depute National",
+  "Depute Provincial",
 ];
-const candidats = [
-  {
-    nom: "Romain MBULU",
-    number: "5",
-    type: "Présidentiel",
-    gender: "M",
-    side: "UDPS",
-  },
-  {
-    nom: "Nadine NZUKI",
-    number: "3",
-    type: "Présidentiel",
-    gender: "F",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Philippe MBALA",
-    number: "5",
-    type: "Deputé National",
-    gender: "M",
-    side: "FCC",
-  },
-  {
-    nom: "Bernadette KAPINGA",
-    number: "3",
-    type: "Présidentiel",
-    gender: "F",
-    side: "FCC",
-  },
-  {
-    nom: "Jean ISEVULA MBIRE",
-    number: "5",
-    type: "Deputé National",
-    gender: "M",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Jemima MYNDA",
-    number: "3",
-    type: "Deputé Provincial",
-    gender: "F",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Romain MBULU",
-    number: "5",
-    type: "Présidentiel",
-    gender: "M",
-    side: "UDPS",
-  },
-  {
-    nom: "Nadine NZUKI",
-    number: "3",
-    type: "Présidentiel",
-    gender: "F",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Romain MBULU",
-    number: "5",
-    type: "Présidentiel",
-    gender: "M",
-    side: "UDPS",
-  },
-  {
-    nom: "Nadine NZUKI",
-    number: "3",
-    type: "Présidentiel",
-    gender: "F",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Romain MBULU",
-    number: "5",
-    type: "Présidentiel",
-    gender: "M",
-    side: "UDPS",
-  },
-  {
-    nom: "Nadine NZUKI",
-    number: "3",
-    type: "Présidentiel",
-    gender: "F",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Romain MBULU",
-    number: "5",
-    type: "Présidentiel",
-    gender: "M",
-    side: "UDPS",
-  },
-  {
-    nom: "Nadine NZUKI",
-    number: "3",
-    type: "Présidentiel",
-    gender: "F",
-    side: "LAMUKA",
-  },
-  {
-    nom: "Romain MBULU",
-    number: "5",
-    type: "Présidentiel",
-    gender: "M",
-    side: "UDPS",
-  },
-  {
-    nom: "Nadine NZUKI",
-    number: "3",
-    type: "Deputé Provincial",
-    gender: "F",
-    side: "LAMUKA",
-  },
-];
+
 const CandidatScreen = () => {
   const [activeElement, setActiveElement] = useState("Tout");
+  const [candidats, setCandidat] = useState([]);
+
+  const fetchData = () => {
+    fetch("https://ecoki.net/processus_E_api/api/list_candidat?filtre=&search=")
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCandidat(data.list);
+      });
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
 
   const handleClick = (value) => {
     setActiveElement(value);
@@ -147,6 +49,7 @@ const CandidatScreen = () => {
           Totals des candidats : <span>1000</span>
         </h3>
         <Row className="candidat_title">
+          <Col></Col>
           <Col>Nom Complet</Col>
           <Col>Numéro</Col>
           <Col>Type</Col>
@@ -157,14 +60,19 @@ const CandidatScreen = () => {
           .filter((candidat) =>
             activeElement !== "Tout" ? candidat.type === activeElement : true
           )
-          .map((candidat) => (
-            <Row className="data">
-              <Col>{candidat.nom}</Col>
-              <Col>{candidat.number}</Col>
-              <Col>{candidat.type}</Col>
-              <Col>{candidat.gender}</Col>
-              <Col>{candidat.side}</Col>
-            </Row>
+          ?.map((candidat) => (
+            <Link to={`/candidat/lists/${candidat.nom}}`} key={candidat.nom}>
+              <Row className="data">
+                <Col>
+                  <img src={candidat.photoCandidat} alt="candidat" />
+                </Col>
+                <Col>{candidat.nom}</Col>
+                <Col>{candidat.numeroCandidat}</Col>
+                <Col>{candidat.scrutin}</Col>
+                <Col>{candidat.sexe}</Col>
+                <Col>{candidat.parti_politique}</Col>
+              </Row>
+            </Link>
           ))}
       </Container>
     </div>

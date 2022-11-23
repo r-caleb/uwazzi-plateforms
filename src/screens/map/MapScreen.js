@@ -138,7 +138,7 @@ const MapScreen = () => {
                 map.setZoom(17);
               }}
             >
-              <FaLocationArrow size={17} className="arrow" />
+              <FaLocationArrow size={15} className="arrow" />
             </button>
           </Col>
         </Row>
