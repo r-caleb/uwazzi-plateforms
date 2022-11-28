@@ -38,7 +38,7 @@ const InfoScreen = () => {
           </p>
         </Col>
       </Row>
-      <Row xs={2} md={3} className="g-4">
+      <Row xs={1} md={3} className="g-4">
         {infos.map((info) => (
           <Col key={info.id}>
             <Card className="bg-dark text-white news__card">
@@ -46,10 +46,13 @@ const InfoScreen = () => {
               <Card.ImgOverlay>
                 <Card.Body className="bottom_left">
                   <Card.Title>{info.titre}</Card.Title>
-                  <Card.Text className="contenu"
+                  <Card.Text
+                    className="contenu"
                     dangerouslySetInnerHTML={{ __html: info.contenu }}
                   />
-                  <Card.Text>{info.date}</Card.Text>
+                  <Card.Text style={{ textDecoration: "underline" }}>
+                    {info.date}
+                  </Card.Text>
                 </Card.Body>
               </Card.ImgOverlay>
             </Card>
