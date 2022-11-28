@@ -13,7 +13,7 @@ const ProvinceScreen = () => {
         return response.json();
       })
       .then((data) => {
-        setProvince(data.list);
+        setProvince(data.data.sort());
       });
   };
   const fetchCenterNumber = () => {
@@ -40,13 +40,11 @@ const ProvinceScreen = () => {
         </h3>
         <Row className="center_title">
           <Col>Province</Col>
-          <Col>Centre</Col>
         </Row>
         {provinces.map((province) => (
-          <Link to={`/center/lists/${province.nom}`}>
-            <Row className="data" key={province.id}>
+          <Link to={`/center/lists/${province.nom}`} key={province.id}>
+            <Row className="data">
               <Col>{province.nom}</Col>
-              <Col>{province.number}</Col>
             </Row>
           </Link>
         ))}

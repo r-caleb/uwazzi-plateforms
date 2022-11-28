@@ -1,0 +1,36 @@
+@import '../../index.scss';
+
+.stat{
+    .total_stat{
+        display: flex;
+        align-items: center;
+        background-color: $secondary-color;
+        margin: 0.5rem;
+        .stat_enrolement{
+            width: 156px;
+            display: flex;
+            flex-direction: column;
+            margin-inline: 1rem;
+            padding: 1rem 0;
+            p:nth-child(2){
+                color: $text-color;
+                font-weight: 700;
+            }
+        }
+    }
+    .bar_container{
+        max-width: 860px;
+        margin: 35px auto;
+        opacity: 0.9;
+    }
+    .voir_stats{
+        text-decoration: none;
+        color: $blue-color;
+        margin: 0 auto 2rem;
+        padding: 0.8rem;
+        background-color: $secondary-color;
+        width: 16rem;
+        border-radius: 20px;
+    }
+
+}

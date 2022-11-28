@@ -67,7 +67,7 @@ function App() {
         }
       />
       <Route
-        path="/center/lists/:provinceId"
+        path="/center/lists/:province"
         element={
           <Layout>
             <CenterScreen />

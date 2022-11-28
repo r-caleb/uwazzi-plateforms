@@ -20,7 +20,7 @@
     font-size: 0.8rem;
     display: flex;
     overflow-x: scroll;
-    justify-content: center;
+    justify-content: center ;
  
     &::-webkit-scrollbar {
        width: 0px;
@@ -95,4 +95,9 @@ a{
       padding: 1rem 0;
    }
 }
+}
+@media screen and (max-width: $breakpoint-small) {
+   .categoriesBar{
+      justify-content: flex-start !important;
+   }
 }

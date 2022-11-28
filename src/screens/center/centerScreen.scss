@@ -37,18 +37,21 @@
    background-color: $secondary-color;
    padding: 0.6rem;
    margin-bottom: 2px;
-   text-align: center;
    cursor: pointer;
 }
-.data_center{
-   background-color: $secondary-color;
-    border: 1px solid $black-color;
-    padding: 0.6rem;
- }
-.quarter{
-    background-color: $blue-color;
-    width: 10rem;
-    padding: 0.5rem;
-   border-radius: 10px 10px 0px 0px;
-}
+.town__center{
+   padding-bottom: 1rem;
+   .data_center{
+               background-color: $secondary-color;
+               border: 1px solid $black-color;
+               padding: 0.6rem;
+            }
+   .quarter{
+             background-color: $blue-color;
+             color: $primary-color;
+            width: 10rem;
+            padding: 0.5rem;
+            border-radius: 10px 10px 0px 0px;
+         }
+}  
 }

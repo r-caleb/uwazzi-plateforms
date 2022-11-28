@@ -20,7 +20,7 @@ const CandidatScreen = () => {
         return response.json();
       })
       .then((data) => {
-        setCandidat(data.list);
+        setCandidat(data.data);
       });
   };
   useEffect(() => {
@@ -46,13 +46,13 @@ const CandidatScreen = () => {
           ))}
         </div>
         <h3>
-          Totals des candidats : <span>1000</span>
+          Totals des candidats : <span>{candidats.length}</span>
         </h3>
         <Row className="candidat_title">
           <Col></Col>
-          <Col>Nom Complet</Col>
+          <Col>Nom</Col>
           <Col>Numéro</Col>
-          <Col>Type</Col>
+          <Col>Scrutin</Col>
           <Col>Genre</Col>
           <Col>Parti</Col>
         </Row>
