@@ -34,9 +34,9 @@ const StatScreen = () => {
   }, []);
   for (let i = 0; i < province.length; i++) {
     arr.push(province[i].nom);
+    arr = arr.filter((item) => item !== "RDC" && item !== "National");
     arr.sort();
   }
-
   console.log(stat);
   return (
     <div className="stat">
@@ -51,7 +51,7 @@ const StatScreen = () => {
             <Row>
               <Col className="total_stat">
                 <div className="stat_enrolement">
-                  <p>Total </p>
+                  <p>Total :</p>
                   <p>{stat?.total_pays?.nombre_total_inscrit || 0} enrolés</p>
                 </div>
                 <div>
@@ -74,13 +74,13 @@ const StatScreen = () => {
               </Col>
               <Col className="total_stat">
                 <div className="stat_enrolement">
-                  <p>Hommes</p>
+                  <p>Hommes :</p>
                   <p>{stat?.total_pays?.nombre_total_homme || 0} enrolés</p>
                 </div>
               </Col>
               <Col className="total_stat">
                 <div className="stat_enrolement">
-                  <p>Femmes</p>
+                  <p>Femmes :</p>
                   <p>{stat?.total_pays?.nombre_total_femme || 0} enrolées</p>
                 </div>
               </Col>
@@ -94,27 +94,71 @@ const StatScreen = () => {
                   {
                     name: "Hommes",
                     data: [
-                      512000, 220000, 111000, 990000, 968000, 512000, 520000,
-                      511000, 590000, 568000, 412000, 120000, 111000, 990000,
-                      968000, 512000, 520000, 511000, 590000, 568000, 968000,
-                      512000, 520000, 511000, 590000, 568000,
+                      stat?.bas_uele?.sumH,
+                      stat?.haut_katanga?.sumH,
+                      stat?.haut_lomami?.sumH,
+                      stat?.bas_uele?.sumH,
+                      stat?.ituri?.sumH,
+                      stat?.Kasai?.sumH,
+                      stat?.Kasai_central?.sumH,
+                      stat?.Kasai_oriental?.sumH,
+                      stat?.kinshasa?.sumH,
+                      stat?.Kongo_Central?.sumH,
+                      stat?.kwango?.sumH,
+                      stat?.kwilu?.sumH,
+                      stat?.lomami?.sumH,
+                      stat?.lualaba?.sumH,
+                      stat?.mai_ndombe?.sumH,
+                      stat?.maniem?.sumH,
+                      stat?.mongala?.sumH,
+                      stat?.Nord_kivu?.sumH,
+                      stat?.Nord_ubangi?.sumH,
+                      stat?.sankuru?.sumH,
+                      stat?.sud_kivu?.sumH,
+                      stat?.sud_ubangi?.sumH,
+                      stat?.tanganyika?.sumH,
+                      stat?.tshopo?.sumH,
+                      stat?.tshuapa?.sumH,
+                      stat?.Equateur?.sumF,
                     ],
                   },
                   {
                     name: "Femmes",
                     data: [
-                      412000, 120000, 111000, 990000, 968000, 512000, 520000,
-                      511000, 590000, 568000, 412000, 120000, 111000, 990000,
-                      968000, 512000, 520000, 511000, 590000, 568000, 968000,
-                      512000, 520000, 511000, 590000, 568000,
+                      stat?.bas_uele?.sumF,
+                      stat?.haut_katanga?.sumF,
+                      stat?.haut_lomami?.sumF,
+                      stat?.haut_uele?.sumF,
+                      stat?.ituri?.sumF,
+                      stat?.Kasai?.sumF,
+                      stat?.Kasai_central?.sumF,
+                      stat?.Kasai_oriental?.sumF,
+                      stat?.kinshasa?.sumF,
+                      stat?.Kongo_Central?.sumF,
+                      stat?.kwango?.sumF,
+                      stat?.kwilu?.sumF,
+                      stat?.lomami?.sumF,
+                      stat?.lualaba?.sumF,
+                      stat?.mai_ndombe?.sumF,
+                      stat?.maniem?.sumF,
+                      stat?.mongala?.sumF,
+                      stat?.Nord_kivu?.sumF,
+                      stat?.Nord_ubangi?.sumF,
+                      stat?.sankuru?.sumF,
+                      stat?.sud_kivu?.sumF,
+                      stat?.sud_ubangi?.sumH,
+                      stat?.tanganyika?.sumH,
+                      stat?.tshopo?.sumF,
+                      stat?.tshuapa?.sumF,
+                      stat?.Equateur?.sumF,
                     ],
                   },
                 ]}
                 options={{
                   title: {
-                    text: "Statistique des enrôlements par province",
+                    text: "Statistique par province",
                     style: {
-                      fontSize: "20",
+                      fontSize: "20"
                     },
                   },
                   chart: {

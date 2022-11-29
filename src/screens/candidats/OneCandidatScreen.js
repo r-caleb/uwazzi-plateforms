@@ -16,19 +16,20 @@ const OneCandidatScreen = () => {
 
   const fetchData = () => {
     fetch(
-      `https://ecoki.net/processus_E_api/api/list_candidat?filtre=&search=${candidate}`
+      `https://ecoki.net/processus_E_api/api/list_candidat?filtre=Tous&search=${candidate}`
     )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        setCandidat(data.list[0]);
+        setCandidat(data.data[0]);
       });
   };
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(candidat);
+  console.log(nom);
+  console.log(candidate);
   return (
     <Container>
       <div className="back" onClick={handleClick}>

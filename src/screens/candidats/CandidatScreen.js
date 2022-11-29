@@ -5,9 +5,9 @@ import "./candidatScreen.scss";
 
 const keywords = [
   "Tout",
-  "Presidentiel",
-  "Depute National",
-  "Depute Provincial",
+  "Présidentielle",
+  "Législative national",
+  "Législative provincial",
 ];
 
 const CandidatScreen = () => {
@@ -15,7 +15,9 @@ const CandidatScreen = () => {
   const [candidats, setCandidat] = useState([]);
 
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/list_candidat?filtre=&search=")
+    fetch(
+      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Tous&search="
+    )
       .then((response) => {
         return response.json();
       })
@@ -26,7 +28,6 @@ const CandidatScreen = () => {
   useEffect(() => {
     fetchData();
   }, []);
-
   const handleClick = (value) => {
     setActiveElement(value);
   };
@@ -52,13 +53,12 @@ const CandidatScreen = () => {
           <Col></Col>
           <Col>Nom</Col>
           <Col>Numéro</Col>
-          <Col>Scrutin</Col>
           <Col>Genre</Col>
           <Col>Parti</Col>
         </Row>
         {candidats
           .filter((candidat) =>
-            activeElement !== "Tout" ? candidat.type === activeElement : true
+            activeElement !== "Tout" ? candidat.scrutin === activeElement : true
           )
           ?.map((candidat) => (
             <Link to={`/candidat/lists/${candidat.nom}}`} key={candidat.nom}>
@@ -66,9 +66,8 @@ const CandidatScreen = () => {
                 <Col>
                   <img src={candidat.photoCandidat} alt="candidat" />
                 </Col>
-                <Col>{candidat.nom}</Col>
+                <Col>{candidat.nom} </Col>
                 <Col>{candidat.numeroCandidat}</Col>
-                <Col>{candidat.scrutin}</Col>
                 <Col>{candidat.sexe}</Col>
                 <Col>{candidat.parti_politique}</Col>
               </Row>

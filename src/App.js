@@ -10,6 +10,7 @@ import ProvinceScreen from "./screens/center/ProvinceScreen";
 import MapScreen from "./screens/map/MapScreen";
 import StatScreen from "./screens/statistique/StatScreen";
 import InfoScreen from "./screens/infos/InfoScreen";
+import OneInfoScreen from "./screens/infos/OneInfoScreen";
 import HomeScreen from "./screens/home/HomeScreen";
 import OneCandidatScreen from "./screens/candidats/OneCandidatScreen";
 
@@ -95,6 +96,14 @@ function App() {
         element={
           <Layout>
             <InfoScreen />
+          </Layout>
+        }
+      />
+      <Route
+        path="/infos/:id"
+        element={
+          <Layout>
+            <OneInfoScreen />
           </Layout>
         }
       />

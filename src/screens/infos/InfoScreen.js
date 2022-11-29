@@ -3,6 +3,7 @@ import { Row, Col, Card, Container } from "react-bootstrap";
 import avatar from "../home/rc.jpg";
 import "./infoScreen.scss";
 import ceni from "./ceni.png";
+import { Link } from "react-router-dom";
 
 const InfoScreen = () => {
   const [infos, setInfo] = useState([]);
@@ -22,7 +23,7 @@ const InfoScreen = () => {
   }, []);
   return (
     <Container className="news">
-      Actualités
+      <h4 className="title">Actualités</h4>
       <Row className="news__banner">
         <Col md={4}>
           <img src={ceni} alt="logo" />
@@ -40,23 +41,25 @@ const InfoScreen = () => {
       </Row>
       <Row xs={1} md={3} className="g-4">
         {infos.map((info) => (
-          <Col key={info.id}>
-            <Card className="bg-dark text-white news__card">
-              <Card.Img src={avatar} alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Body className="bottom_left">
-                  <Card.Title>{info.titre}</Card.Title>
-                  <Card.Text
-                    className="contenu"
-                    dangerouslySetInnerHTML={{ __html: info.contenu }}
-                  />
-                  <Card.Text style={{ textDecoration: "underline" }}>
-                    {info.date}
-                  </Card.Text>
-                </Card.Body>
-              </Card.ImgOverlay>
-            </Card>
-          </Col>
+          <Link to={`/infos/${info.id}`}>
+            <Col key={info.id}>
+              <Card className="bg-dark text-white news__card">
+                <Card.Img src={avatar} alt="Card image" />
+                <Card.ImgOverlay>
+                  <Card.Body className="bottom_left">
+                    <Card.Title>{info.titre}</Card.Title>
+                    <Card.Text
+                      className="contenu"
+                      dangerouslySetInnerHTML={{ __html: info.contenu }}
+                    />
+                    <Card.Text style={{ textDecoration: "underline" }}>
+                      {info.date}
+                    </Card.Text>
+                  </Card.Body>
+                </Card.ImgOverlay>
+              </Card>
+            </Col>
+          </Link>
         ))}
       </Row>
     </Container>

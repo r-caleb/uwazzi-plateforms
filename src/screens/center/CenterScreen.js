@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./centerScreen.scss";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { useParams } from "react-router-dom";
+import Chart from "react-apexcharts";
 
 const CenterScreen = () => {
   const [activeElement, setActiveElement] = useState(
@@ -62,11 +63,46 @@ const CenterScreen = () => {
         {provinceCenter.map((center) => (
           <div className="town__center" key={center.nomCentre}>
             <div className="quarter">{center.territoire}</div>
-            <Row className="data_center">
-              <Col>{center.nomCentre}</Col>
-              <Col>{center.NbrDesBureaux} bureaux de votes</Col>
-              <Col>Avenue des écoliers N°13 Réf: École de navigation</Col>
-            </Row>
+            <div className="data_center">
+              <Row>
+                <Col><strong>{center.nomCentre}</strong></Col>
+                <Col>{center.NbrDesBureaux} bureaux de votes</Col>
+                <Col>Avenue des écoliers N°13 Réf: École de navigation</Col>
+              </Row>
+              <Row>
+                <Col className="total_stat">
+                  <div className="stat_enrolement">
+                    <p>Total :</p>
+                    <p>{center?.nbrElecteur || 0} enrolés</p>
+                  </div>
+                  <div>
+                    <Chart
+                      type="donut"
+                      width={240}
+                      series={[
+                        center?.nbrHommes ? parseInt(center?.nbrHommes) : 1,
+                        center?.nbrFemmes ? parseInt(center?.nbrFemmes) : 1,
+                      ]}
+                      options={{
+                        labels: ["Hommes", "Femmes"],
+                      }}
+                    />
+                  </div>
+                </Col>
+                <Col className="total_stat">
+                  <div>
+                    <p>Hommes :</p>
+                    <span>{center?.nbrHommes || 0} enrolés</span>
+                  </div>
+                </Col>
+                <Col className="total_stat">
+                  <div>
+                    <p>Femmes :</p>
+                    <span>{center?.nbrFemmes || 0} enrolées</span>
+                  </div>
+                </Col>
+              </Row>
+            </div>
           </div>
         ))}
       </Container>
