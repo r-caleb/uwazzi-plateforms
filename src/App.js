@@ -13,6 +13,7 @@ import InfoScreen from "./screens/infos/InfoScreen";
 import OneInfoScreen from "./screens/infos/OneInfoScreen";
 import HomeScreen from "./screens/home/HomeScreen";
 import OneCandidatScreen from "./screens/candidats/OneCandidatScreen";
+import ResultatScreen from "./screens/resultat/ResultatScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -104,6 +105,14 @@ function App() {
         element={
           <Layout>
             <OneInfoScreen />
+          </Layout>
+        }
+      />
+      <Route
+        path="/resultats/data"
+        element={
+          <Layout>
+            <ResultatScreen />
           </Layout>
         }
       />

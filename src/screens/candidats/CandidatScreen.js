@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./candidatScreen.scss";
+import avatar from "../home/rc.jpg";
 
 const keywords = [
   "Tout",
@@ -31,6 +32,7 @@ const CandidatScreen = () => {
   const handleClick = (value) => {
     setActiveElement(value);
   };
+  
   return (
     <div className="container__candidat">
       <h2>Candidats</h2>
@@ -54,7 +56,7 @@ const CandidatScreen = () => {
           <Col>Nom</Col>
           <Col>Numéro</Col>
           <Col>Genre</Col>
-          <Col>Parti</Col>
+          <Col>Parti Politique</Col>
         </Row>
         {candidats
           .filter((candidat) =>
@@ -64,7 +66,7 @@ const CandidatScreen = () => {
             <Link to={`/candidat/lists/${candidat.nom}}`} key={candidat.nom}>
               <Row className="data">
                 <Col>
-                  <img src={candidat.photoCandidat} alt="candidat" />
+                  <img src={avatar} alt="candidat" />
                 </Col>
                 <Col>{candidat.nom} </Col>
                 <Col>{candidat.numeroCandidat}</Col>

@@ -3,10 +3,21 @@ import { Row, Col, Card, Container } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 import avatar from "../home/rc.jpg";
 import "./infoScreen.scss";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  WhatsappIcon,
+  WhatsappShareButton,
+  TwitterShareButton,
+  TwitterIcon,
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+} from "react-share";
 
 const OneInfoScreen = () => {
   const [infos, setInfo] = useState([]);
   const id = useParams();
+  let url = "https://www.npmjs.com/package/react-share";
 
   const fetchData = () => {
     fetch("https://ecoki.net/processus_E_api/api/articles?search=")
@@ -38,6 +49,23 @@ const OneInfoScreen = () => {
             <br />
             <br />
             <p dangerouslySetInnerHTML={{ __html: news[0]?.contenu }} />
+          </div>
+          <div className="social_link">
+            <p>Partager sur :</p>
+            <div>
+              <FacebookShareButton url={url}>
+                <FacebookIcon size={32} round logoFillColor="white" />
+              </FacebookShareButton>
+              <FacebookMessengerShareButton url={url}>
+                <FacebookMessengerIcon size={32} round logoFillColor="white" />
+              </FacebookMessengerShareButton>
+              <WhatsappShareButton title="visitez cet article" url={url}>
+                <WhatsappIcon size={32} round logoFillColor="white" />
+              </WhatsappShareButton>
+              <TwitterShareButton url={url}>
+                <TwitterIcon size={32} round logoFillColor="white" />
+              </TwitterShareButton>
+            </div>
           </div>
         </Col>
         <Col md={3} className="g-4">

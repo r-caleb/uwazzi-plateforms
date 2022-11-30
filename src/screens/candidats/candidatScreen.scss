@@ -67,6 +67,12 @@ a{
    padding: 0.6rem;
    margin-bottom: 2px;
    text-align: center;
+   align-items: center;
+   img{
+      width: 50px;
+      height: auto;
+      border-radius: 50%;
+   }
 }
 }
 .back{

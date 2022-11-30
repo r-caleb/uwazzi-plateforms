@@ -74,6 +74,15 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
         </li>
       </NavLink>
       <NavLink
+        to="/resultats/data"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <FaCalculator size={23} />
+          <span>Résultats</span>
+        </li>
+      </NavLink>
+      <NavLink
         to="/infos"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
@@ -83,7 +92,7 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
         </li>
       </NavLink>
       <hr />
-      <h2 className="org"> ORGANISATION</h2>
+      {/*  <h2 className="org"> ORGANISATION</h2>
       <NavLink
         to="/feed/like"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -101,7 +110,7 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
           <img src={interniews} alt="logo interniews" />
           <span>Interniews</span>
         </li>
-      </NavLink>
+      </NavLink> */}
     </nav>
   );
 };

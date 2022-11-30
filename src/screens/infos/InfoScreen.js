@@ -4,10 +4,20 @@ import avatar from "../home/rc.jpg";
 import "./infoScreen.scss";
 import ceni from "./ceni.png";
 import { Link } from "react-router-dom";
+import {
+  FacebookShareButton,
+  FacebookIcon,
+  WhatsappIcon,
+  WhatsappShareButton,
+  TwitterShareButton,
+  TwitterIcon,
+  FacebookMessengerShareButton,
+  FacebookMessengerIcon,
+} from "react-share";
 
 const InfoScreen = () => {
   const [infos, setInfo] = useState([]);
-
+  let url = "https://www.npmjs.com/package/react-share";
   const fetchData = () => {
     fetch("https://ecoki.net/processus_E_api/api/articles?search=")
       .then((response) => {
@@ -17,7 +27,6 @@ const InfoScreen = () => {
         setInfo(data.data);
       });
   };
-
   useEffect(() => {
     fetchData();
   }, []);
@@ -55,6 +64,28 @@ const InfoScreen = () => {
                     <Card.Text style={{ textDecoration: "underline" }}>
                       {info.date}
                     </Card.Text>
+                    <div className="social_link">
+                      <p>Partager sur :</p>
+                      <div>
+                        <FacebookShareButton url={url}>
+                          <FacebookIcon size={32} round logoFillColor="white" />
+                        </FacebookShareButton>
+                        <FacebookMessengerShareButton
+                          url={url}
+                        >
+                          <FacebookMessengerIcon size={32} round logoFillColor="white" />
+                        </FacebookMessengerShareButton>
+                        <WhatsappShareButton
+                          title="visitez cet article"
+                          url={url}
+                        >
+                          <WhatsappIcon size={32} round logoFillColor="white" />
+                        </WhatsappShareButton>
+                        <TwitterShareButton url={url}>
+                          <TwitterIcon size={32} round logoFillColor="white" />
+                        </TwitterShareButton>
+                      </div>
+                    </div>
                   </Card.Body>
                 </Card.ImgOverlay>
               </Card>

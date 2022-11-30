@@ -1,11 +1,18 @@
 @import '../../index.scss';
 
 .stat{
+    .title{
+        background-color: $secondary-color;
+        padding: 0.6rem;
+        border-radius: 10px 10px 0px 0px;
+        margin-bottom: 20px;
+        color: $blue-color;
+    }
     
     .total_stat{
         display: flex;
         align-items: center;
-        background-color:#071f5733;
+        background-color:$secondary-color;
         margin: 0.5rem;
         .stat_enrolement{
             width: 6rem;
@@ -33,5 +40,6 @@
         width: 16rem;
         border-radius: 20px;
     }
+
 
 }
