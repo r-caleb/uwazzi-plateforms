@@ -3,7 +3,7 @@ import "./centerScreen.scss";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
 
-const CenterScreen = () => {
+const CenterStat = () => {
   const [activeElement, setActiveElement] = useState(
     "Selectionner un district"
   );
@@ -48,7 +48,6 @@ const CenterScreen = () => {
   };
 
   const communeCenter = groupObjectByField(provinceCenter, "territoire");
-
   return (
     <div className="container__center">
       <Container>
@@ -102,4 +101,4 @@ const CenterScreen = () => {
   );
 };
 
-export default CenterScreen;
+export default CenterStat;

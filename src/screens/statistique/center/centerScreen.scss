@@ -1,0 +1,74 @@
+@import '../../../index.scss';
+
+.container__center{
+   h2{
+        font-size: 1.5rem;
+        font-weight:400;
+    }
+    h3{
+        font-size: 1.1rem;
+        font-weight: 300;
+        margin: 1rem;
+         span{
+            background-color: #D7F5E7;
+            padding: 5px;
+            font-weight:500;
+         }
+    }
+    a{
+        text-decoration: none;
+        color: $text-color;
+        &:hover{
+            color:$blue-color;
+        }
+    }
+.center_title{
+   background-color: $secondary-color;
+   padding: 0.6rem;
+   border-radius: 10px 10px 0px 0px;
+   margin-bottom: 20px;
+   text-align: center;
+}
+.title{
+   border-radius: 10px ;
+
+}
+.data{
+   background-color: $secondary-color;
+   padding: 0.6rem;
+   margin-bottom: 2px;
+   cursor: pointer;
+}
+.town__center{
+   padding-bottom: 1rem;
+   .data_center{
+               background-color: $secondary-color;
+               box-shadow: 0px 0px 3px 3px rgba(111, 111, 117, 0.2);
+               padding: 0.6rem;
+            
+               strong{
+                  font-weight: 800;
+               }
+               .separate{
+                  margin-bottom: 1rem;
+               }
+            }
+   .quarter{
+             background-color: $blue-color;
+             color: $primary-color;
+            width: 10rem;
+            padding: 0.5rem;
+            border-radius: 10px 10px 0px 0px;
+         }
+}  
+.total_stat{
+   display: flex;
+   align-items: center;
+   .stat_enrolement{
+       p:nth-child(2){
+           color: $text-color;
+           font-weight: 700;
+       }
+   }
+}
+}
