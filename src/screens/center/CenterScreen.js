@@ -77,7 +77,7 @@ const CenterScreen = () => {
               <div className="quarter">{center.name}</div>
               <Row className="data_center">
                 {center.values.map((item) => (
-                  <Row>
+                  <Row className="separate">
                     <Col>
                       <strong>{item.nomCentre}</strong>
                     </Col>

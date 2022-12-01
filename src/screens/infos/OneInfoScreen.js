@@ -32,9 +32,8 @@ const OneInfoScreen = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log();
   const news = infos.filter((info) => info && info.id === id.id);
-  console.log(news[0]);
+
   return (
     <Container className="news">
       <h4 className="title">Actualités</h4>

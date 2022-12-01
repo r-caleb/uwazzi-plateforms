@@ -19,7 +19,6 @@ const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
 
   const handleToggleSidebar = () => toggleSidebar((value) => !value);
-
   return (
     <>
       <Header handleToggleSidebar={handleToggleSidebar} />
