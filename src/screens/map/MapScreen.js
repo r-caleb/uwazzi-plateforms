@@ -13,7 +13,7 @@ import UseGeolocation from "../../components/UseGeolocation";
 
 const MapScreen = () => {
   const { isLoaded } = useJsApiLoader({
-    googleMapsApiKey: "AIzaSyDzO0gmh8S-qU8CkPrma3ZqKIDL7r9PDrg",
+    googleMapsApiKey: process.env.REACT_APP_MAP,
     libraries: ["places"],
   });
   const [map, setMap] = useState(/** @type google.maps.Map */ (null));
@@ -67,6 +67,7 @@ const MapScreen = () => {
   if (!isLoaded) {
     return <div>Chargement.........</div>;
   }
+
   return (
     <div className="map__container">
       <div className="map__google_box">

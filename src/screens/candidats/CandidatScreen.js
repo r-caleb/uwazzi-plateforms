@@ -54,7 +54,6 @@ const CandidatScreen = () => {
         <Row className="candidat_title">
           <Col></Col>
           <Col>Nom</Col>
-          <Col>Numéro</Col>
           <Col>Genre</Col>
           <Col>Parti Politique</Col>
         </Row>
@@ -69,7 +68,6 @@ const CandidatScreen = () => {
                   <img src={avatar} alt="candidat" />
                 </Col>
                 <Col>{candidat.nom} </Col>
-                <Col>{candidat.numeroCandidat}</Col>
                 <Col>{candidat.sexe}</Col>
                 <Col>{candidat.parti_politique}</Col>
               </Row>
