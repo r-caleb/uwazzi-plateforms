@@ -37,7 +37,6 @@ const HomeScreen = () => {
   }, []);
   let recent = [];
   recent = infos && infos[infos.length - 1];
-  console.log(recent);
   return (
     <Container className="home">
       <Row className="home__banner">

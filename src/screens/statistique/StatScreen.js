@@ -38,7 +38,6 @@ const StatScreen = () => {
     arr.sort();
   }
 
-  
   return (
     <div className="stat">
       <Container>
@@ -84,7 +83,7 @@ const StatScreen = () => {
           <Chart
             type="donut"
             width={"100%"}
-            height={600}
+            height={550}
             series={[
               stat?.bas_uele?.total ? stat?.bas_uele?.total : 0,
               stat?.haut_katanga?.total ? stat?.haut_katanga?.total : 0,
@@ -169,7 +168,7 @@ const StatScreen = () => {
           />
         </Row>
         <Row>
-          <Link to="/province/lists" className="voir_stats">
+          <Link to="/province/stat/lists" className="voir_stats">
             Voir les Statistiques par centre
           </Link>
         </Row>

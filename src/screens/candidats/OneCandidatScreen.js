@@ -28,13 +28,12 @@ const OneCandidatScreen = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(nom);
-  console.log(candidate);
+
   return (
     <Container>
-      <div className="back" onClick={handleClick}>
-        <MdArrowBack size={26} />
-        <span>Retour sur la liste des candidats</span>
+      <div className="back">
+        <MdArrowBack size={26} onClick={handleClick} />
+        <span onClick={handleClick}>Retour sur la liste des candidats</span>
       </div>
       <Row className="card_candidat row">
         <Col lg={4} className="pictures">
