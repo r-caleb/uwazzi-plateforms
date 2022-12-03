@@ -104,8 +104,8 @@ const HomeScreen = () => {
           deputés) et centre de votes
         </p>
         <Col className="card_candidate">
-          <Link to={`/candidat/lists`}>
-            <Card style={{ width: "16rem" }}>
+          <Card style={{ width: "16rem" }}>
+            <Link to={`/candidat/lists`}>
               <Card.Img variant="top" src={candidate} />
               <Card.Body>
                 <Card.Text>
@@ -113,12 +113,12 @@ const HomeScreen = () => {
                   Trouver la liste de tous les candidats
                 </Card.Text>
               </Card.Body>
-            </Card>
-          </Link>
+            </Link>
+          </Card>
         </Col>
         <Col className="card_candidate">
-          <Link to={`/province/lists`}>
-            <Card style={{ width: "16rem" }}>
+          <Card style={{ width: "16rem" }}>
+            <Link to={`/province/lists`}>
               <Card.Img variant="top" src={center} />
               <Card.Body>
                 <Card.Text>
@@ -126,8 +126,8 @@ const HomeScreen = () => {
                   Trouver la liste de tous les centres de vote
                 </Card.Text>
               </Card.Body>
-            </Card>
-          </Link>
+            </Link>
+          </Card>
         </Col>
         <Col className="card_candidate"></Col>
       </Row>
@@ -135,40 +135,40 @@ const HomeScreen = () => {
         <h3 className="title">OUTILS</h3>
         <Row className="home__outils">
           <Col className="card_outils">
-            <Link to={`/center/map`}>
-              <Card style={{ width: "16rem" }}>
+            <Card style={{ width: "16rem" }}>
+              <Link to={`/center/map`}>
                 <Card.Img variant="top" src={map} />
                 <Card.Body>
                   <Card.Text>
                     Retrouver Le centre le plus proche dans la carte
                   </Card.Text>
                 </Card.Body>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           </Col>
           <Col className="card_outils">
-            <Link to={`/stats`}>
-              <Card style={{ width: "16rem" }}>
+            <Card style={{ width: "16rem" }}>
+              <Link to={`/stats`}>
                 <Card.Img variant="top" src={stat} />
                 <Card.Body>
                   <Card.Text>
                     Consulter les statistiques sur les enrolements
                   </Card.Text>
                 </Card.Body>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           </Col>
           <Col className="card_outils">
-            <Link to={`/resultats/data`}>
-              <Card style={{ width: "16rem" }}>
+            <Card style={{ width: "16rem" }}>
+              <Link to={`/resultats/data`}>
                 <Card.Img variant="top" src={diagram} />
                 <Card.Body>
                   <Card.Text>
-                    Voir une tendance des résultats électoraux
+                    Voir les tendances des résultats électoraux
                   </Card.Text>
                 </Card.Body>
-              </Card>
-            </Link>
+              </Link>
+            </Card>
           </Col>
         </Row>
       </div>
