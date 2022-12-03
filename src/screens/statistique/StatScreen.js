@@ -153,7 +153,7 @@ const StatScreen = () => {
                       show: true,
                       total: {
                         show: true,
-                        fontSize: 30,
+                        fontSize: 16,
                         color: "#f90000",
                       },
                     },

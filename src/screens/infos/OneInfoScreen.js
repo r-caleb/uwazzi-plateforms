@@ -75,7 +75,7 @@ const OneInfoScreen = () => {
                   <Card.Img src={avatar} alt="Card image" />
                   <Card.ImgOverlay>
                     <Card.Body className="bottom_left">
-                      <Card.Title>{info.titre}</Card.Title>
+                      <Card.Title className="title_info">{info.titre}</Card.Title>
                       <Card.Text
                         className="contenu"
                         dangerouslySetInnerHTML={{ __html: info.contenu }}
@@ -83,6 +83,42 @@ const OneInfoScreen = () => {
                       <Card.Text style={{ textDecoration: "underline" }}>
                         {info.date}
                       </Card.Text>
+                      <div className="social_link">
+                        <p>Partagez sur :</p>
+                        <div>
+                          <FacebookShareButton url={url}>
+                            <FacebookIcon
+                              size={32}
+                              round
+                              logoFillColor="white"
+                            />
+                          </FacebookShareButton>
+                          <FacebookMessengerShareButton url={url}>
+                            <FacebookMessengerIcon
+                              size={32}
+                              round
+                              logoFillColor="white"
+                            />
+                          </FacebookMessengerShareButton>
+                          <WhatsappShareButton
+                            title="visitez cet article"
+                            url={url}
+                          >
+                            <WhatsappIcon
+                              size={32}
+                              round
+                              logoFillColor="white"
+                            />
+                          </WhatsappShareButton>
+                          <TwitterShareButton url={url}>
+                            <TwitterIcon
+                              size={32}
+                              round
+                              logoFillColor="white"
+                            />
+                          </TwitterShareButton>
+                        </div>
+                      </div>
                     </Card.Body>
                   </Card.ImgOverlay>
                 </Card>

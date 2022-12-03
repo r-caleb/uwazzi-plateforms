@@ -65,7 +65,7 @@ const InfoScreen = () => {
                       {info.date}
                     </Card.Text>
                     <div className="social_link">
-                      <p>Partager sur :</p>
+                      <p>Partagez sur :</p>
                       <div>
                         <FacebookShareButton url={url}>
                           <FacebookIcon size={32} round logoFillColor="white" />

@@ -47,6 +47,28 @@ const OneCenterStat = () => {
               legend: {
                 position: "top",
               },
+              title: {
+                text: "Statistiques des enrolés",
+                align: "center",
+              },
+              plotOptions: {
+                pie: {
+                  donut: {
+                    labels: {
+                      show: true,
+                      total: {
+                        show: true,
+                        fontSize: 16,
+                        color: "#f90000",
+                      },
+                    },
+                  },
+                },
+              },
+
+              dataLabels: {
+                enabled: true,
+              },
             }}
           />
         </Col>

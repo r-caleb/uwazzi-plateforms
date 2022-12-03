@@ -96,10 +96,9 @@ const HomeScreen = () => {
         à toutes les informations concernant le processus électoral. Cette
         vulgarisation des informations, contribuera à la transparence de ce
         processus et rétablir la confiance aux électeurs.
-        <br />
-        Uwazzi vous propose :
       </p>
       <Row className="home__candidate">
+        <h4>Uwazzi vous propose : </h4>
         <p>
           Les informations concernant tous les candidats (présidentiels et
           deputés) et centre de votes
