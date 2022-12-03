@@ -1,24 +1,59 @@
 @import '../../index.scss';
 
 .home{
+    margin-bottom: 3rem;
     &__banner{
+        margin-bottom: 2rem;
+        .carousel-caption {
+            position: absolute;
+            right: 0%;
+            bottom: 0rem;
+            left: 0%;
+            width: 100%;
+            padding: 0.9rem 2rem 2.5rem;
+            color: #fff;
+            background: #1e1d1dd1;
+            text-align: left;
+        }
     img{
-        height: 500px;
-        object-fit:fill;
+        height: 350px;
+        object-fit: cover;
         }
     }
-    &__news{
+    &__actuality{ 
+        padding: 1rem 2rem 2rem;
+        background-color: #fff;
+        .title{
+            padding: 0 1.8rem 1rem;
+            color: rgba(0, 0, 0, 0.671);
+        }
+    .home__news{
         box-shadow: 0px 0px 5px 5px rgba(111, 111, 117, 0.2);
         display: flex;
         justify-content: center;
         align-items: center;
         margin: auto !important;
-        width: 90%;
+        width: 95%;
         border-radius: 30px;
+        background-color: $blue-color;
+        overflow: hidden;
+
+        h3{
+            font-size: 1.2rem;
+        }
+        .over{
+            overflow: hidden;
+            img{
+                width:112%;
+                margin-left: -12px;
+                height: 227px;
+                border-radius: 30px;
+                object-fit: cover;
+            }
+        }
         .col:nth-child(2){
-            background-color: $blue-color;
             color: $primary-color;
-            padding: 1rem;
+            padding: 1rem 1rem 0;
             border-radius: 0px 30px 30px 0px;
         }
         .contenu{
@@ -26,42 +61,79 @@
             display: -webkit-box;
             -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
+            font-size: 0.9rem;
         }
     }
+}
     .voir__plus{
         text-decoration:underline;
         color: $secondary-color;
         cursor: pointer;
-        
+        font-size: 0.9rem;
     }
-    h3{
-        padding: 1.7rem;
-        font-weight: bold;
-        font-size: 18px;
-    }
-     .date{
-         padding-inline: 1.7rem;
-     }
-    
     
     &__candidate{
-       .voir__candidat{
-            text-align: end;
-            padding: 1rem 5rem;
-            color: $blue-color;
+        padding: 1rem 3rem 1rem;
+        background-color: #fff;
+        p{margin: 0 0.7rem 1rem;}
+        img {
+            max-width: 100%;
         }
+        .card_candidate{
+            margin-bottom: 2rem;
+            a{
+                color:$text-color;
+                text-decoration:none;
+            }
+         .card{
+             box-shadow: 0px 0px 10px 3px rgba(95, 93, 93, 0.2);
+            img{
+                border-radius: 5px 5px 0px 0px;
+                height:180px;
+                object-fit:cover;
+            }
+         }
+         }
     }
+    
     .outils{
-        background-color: #C2D3DF;
+        padding: 2rem;
+        .home__outils{
+         .card_outils{
+            margin-bottom: 2rem;
+            a{
+                color:$text-color;
+                text-decoration:none;
+            }
+         .card{
+             box-shadow: 0px 0px 10px 3px rgba(95, 93, 93, 0.2);
+            img{
+                border-radius: 5px 5px 0px 0px;
+            }
+         }
+         }
+        }
+        .title{
+            padding: 0 0rem 1rem;
+            color: rgba(0, 0, 0, 0.671);
+        }
         img{
-            width: 300px;
-             height: 300px;
+            width: 254px;
+             height: 200px;
              border-radius: 0%;
         }
         .card__map{
             display: flex;
             flex-direction: column;
         }
+    }
+    hr{
+        margin: 2rem;
+    }
+    .presentation{
+        padding: 0 3.5rem 1rem;
+        font-size: 1rem;
+
     }
 }
 @media (max-width: $breakpoint-small) {

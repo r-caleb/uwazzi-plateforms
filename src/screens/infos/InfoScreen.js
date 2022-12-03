@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Container } from "react-bootstrap";
-import avatar from "../home/rc.jpg";
+import avatar from "../home/assets/rc.jpg";
 import "./infoScreen.scss";
 import ceni from "./ceni.png";
 import { Link } from "react-router-dom";

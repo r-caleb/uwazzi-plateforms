@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import "./candidatScreen.scss";
 import { Container, Row, Col, Table } from "react-bootstrap";
 import { MdArrowBack } from "react-icons/md";
-import avatar from "../home/rc.jpg";
+import avatar from "../home/assets/rc.jpg";
 import { useNavigate, useParams } from "react-router-dom";
 
 const OneCandidatScreen = () => {

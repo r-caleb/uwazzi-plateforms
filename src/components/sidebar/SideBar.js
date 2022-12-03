@@ -7,6 +7,7 @@ import {
   FaMapMarkerAlt,
   FaCalculator,
   FaInfoCircle,
+  FaChartBar
 } from "react-icons/fa";
 import ceni from "./ceni.png";
 import interniews from "./interniews.png";
@@ -69,7 +70,7 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         <li>
-          <FaCalculator size={23} />
+          <FaChartBar size={23} />
           <span>Statistiques</span>
         </li>
       </NavLink>
