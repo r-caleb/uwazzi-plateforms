@@ -1,16 +1,16 @@
 import React, { useEffect, useState } from "react";
-import {
-  Container,
-  Row,
-  Col,
-  Card,
-  CardGroup,
-  Carousel,
-} from "react-bootstrap";
+import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import "./homeScreen.scss";
-import banner from "./banner.jpg";
-import candidat from "./rc.jpg";
-import map from "./map.png";
+import candidat from "./assets/rc.jpg";
+import slide2 from "./assets/electa.jpg";
+import candidate from "./assets/vote.jpg";
+import slide1 from "./assets/batiment.jpg";
+import slide3 from "./assets/elec.jpg";
+import center from "./assets/center.jpg";
+import slide4 from "./assets/jeu.jpg";
+import diagram from "./assets/diagramme.jpg";
+import stat from "./assets/stat.png";
+import map from "./assets/map.png";
 import { Link } from "react-router-dom";
 
 const HomeScreen = () => {
@@ -40,20 +40,50 @@ const HomeScreen = () => {
   return (
     <Container className="home">
       <Row className="home__banner">
-        <img src={banner} alt="banner" />
+        <Carousel activeIndex={index} onSelect={handleSelect}>
+          <Carousel.Item>
+            <img className="d-block w-100" src={slide1} alt="First slide" />
+            <Carousel.Caption>
+              <h3>Ensemble, rétablissons la confiance aux électeurs</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={slide2} alt="Second slide" />
+
+            <Carousel.Caption>
+              <h3>Ensemble, rétablissons la confiance aux électeurs</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={slide3} alt="Third slide" />
+
+            <Carousel.Caption>
+              <h3>Ensemble, rétablissons la confiance aux électeurs</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+          <Carousel.Item>
+            <img className="d-block w-100" src={slide4} alt="Fourth slide" />
+
+            <Carousel.Caption>
+              <h3>Ensemble, rétablissons la confiance aux électeurs</h3>
+            </Carousel.Caption>
+          </Carousel.Item>
+        </Carousel>
       </Row>
-      <h3>A LA UNE</h3>
-      <div>
+      <div className="home__actuality">
+        <h3 className="title">A LA UNE</h3>
         <Row className="home__news">
-          <Col lg={4}>
-            <h3>{recent?.titre}</h3>
-            <p className="date">{recent?.date}</p>
+          <Col lg={5} className="over">
+            <img src={candidat} alt="info" />
           </Col>
           <Col>
+            <h3>{recent?.titre}</h3>
             <p
               className="contenu"
               dangerouslySetInnerHTML={{ __html: recent?.contenu }}
             />
+            <p className="date">{recent?.date}</p>
+
             <Link to={`/infos/${recent?.id}`} className="voir__plus">
               <p>Lire l'article</p>
             </Link>
@@ -61,57 +91,87 @@ const HomeScreen = () => {
         </Row>
       </div>
       <hr />
-      <h3>Les informations sur tous les candidats </h3>
-      <div>
-        <Row className="home__candidate">
-          <Carousel activeIndex={index} onSelect={handleSelect}>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={candidat}
-                alt="First slide"
-              />
-              <Carousel.Caption>
-                <h3>First slide label</h3>
-                <p>
-                  Nulla vitae elit libero, a pharetra augue mollis interdum.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={candidat}
-                alt="Second slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Second slide label</h3>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-              </Carousel.Caption>
-            </Carousel.Item>
-            <Carousel.Item>
-              <img
-                className="d-block w-100"
-                src={candidat}
-                alt="Third slide"
-              />
-
-              <Carousel.Caption>
-                <h3>Third slide label</h3>
-                <p>
-                  Praesent commodo cursus magna, vel scelerisque nisl
-                  consectetur.
-                </p>
-              </Carousel.Caption>
-            </Carousel.Item>
-          </Carousel>
-          <p className="voir__candidat voir__plus">Voir tous les candidats</p>
-        </Row>
-      </div>
+      <p className="presentation">
+        La plateforme propose un environnement pour vous permettre d'avoir accès
+        à toutes les informations concernant le processus électoral. Cette
+        vulgarisation des informations, contribuera à la transparence de ce
+        processus et rétablir la confiance aux électeurs.
+        <br />
+        Uwazzi vous propose :
+      </p>
+      <Row className="home__candidate">
+        <p>
+          Les informations concernant tous les candidats (présidentiels et
+          deputés) et centre de votes
+        </p>
+        <Col className="card_candidate">
+          <Link to={`/candidat/lists`}>
+            <Card style={{ width: "16rem" }}>
+              <Card.Img variant="top" src={candidate} />
+              <Card.Body>
+                <Card.Text>
+                  Qui voter ?<br />
+                  Trouver la liste de tous les candidats
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+        </Col>
+        <Col className="card_candidate">
+          <Link to={`/province/lists`}>
+            <Card style={{ width: "16rem" }}>
+              <Card.Img variant="top" src={center} />
+              <Card.Body>
+                <Card.Text>
+                  Où voter ?<br />
+                  Trouver la liste de tous les centres de vote
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Link>
+        </Col>
+        <Col className="card_candidate"></Col>
+      </Row>
       <div className="outils">
-        <h3>OUTILS</h3>
-        <Row className="home__candidate"></Row>
+        <h3 className="title">OUTILS</h3>
+        <Row className="home__outils">
+          <Col className="card_outils">
+            <Link to={`/center/map`}>
+              <Card style={{ width: "16rem" }}>
+                <Card.Img variant="top" src={map} />
+                <Card.Body>
+                  <Card.Text>
+                    Retrouver Le centre le plus proche dans la carte
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+          <Col className="card_outils">
+            <Link to={`/stats`}>
+              <Card style={{ width: "16rem" }}>
+                <Card.Img variant="top" src={stat} />
+                <Card.Body>
+                  <Card.Text>
+                    Consulter les statistiques sur les enrolements
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+          <Col className="card_outils">
+            <Link to={`/resultats/data`}>
+              <Card style={{ width: "16rem" }}>
+                <Card.Img variant="top" src={diagram} />
+                <Card.Body>
+                  <Card.Text>
+                    Voir une tendance des résultats électoraux
+                  </Card.Text>
+                </Card.Body>
+              </Card>
+            </Link>
+          </Col>
+        </Row>
       </div>
     </Container>
   );

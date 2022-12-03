@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./candidatScreen.scss";
-import avatar from "../home/rc.jpg";
+import avatar from "../home/assets/rc.jpg";
 
 const keywords = [
   "Tout",
@@ -32,7 +32,7 @@ const CandidatScreen = () => {
   const handleClick = (value) => {
     setActiveElement(value);
   };
-  
+
   return (
     <div className="container__candidat">
       <h2>Candidats</h2>

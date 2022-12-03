@@ -81,5 +81,22 @@
       transform: translateX(-100%);
       position: fixed;
       z-index: 999;
-   }
+      a {
+         padding: 0.6rem 2.55rem;
+         margin: 0rem 0.7rem;
+         cursor: pointer;
+         color: $text-color;
+         text-decoration: none;
+   
+         span {
+            margin-left: 0rem !important;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+         }
+      }
+   
+      }
+
 }
