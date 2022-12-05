@@ -12,8 +12,14 @@
    transition: transform 0.2s ease-in;
 
    position: sticky;
-   top: 10vh;
+   top: 13vh;
    left: 0;
+   overflow-y: scroll;
+   &::-webkit-scrollbar {
+      width: 0px;
+   }
+   scrollbar-width: none;
+
    h2{
       padding: 1rem 1.5rem 0rem;
       font-size: 14px;

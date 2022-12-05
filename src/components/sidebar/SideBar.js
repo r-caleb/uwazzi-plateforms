@@ -7,7 +7,7 @@ import {
   FaMapMarkerAlt,
   FaCalculator,
   FaInfoCircle,
-  FaChartBar
+  FaChartBar,
 } from "react-icons/fa";
 import ceni from "./ceni.png";
 import interniews from "./interniews.png";
