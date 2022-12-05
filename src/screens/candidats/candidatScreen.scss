@@ -69,7 +69,7 @@ a{
    text-align: center;
    align-items: center;
    img{
-      width: 50px;
+      width: 40px;
       height: auto;
       border-radius: 50%;
    }
@@ -105,5 +105,13 @@ a{
 @media screen and (max-width: $breakpoint-small) {
    .categoriesBar{
       justify-content: flex-start !important;
+   }
+   .data {
+      font-size: 0.8rem;
+      img{
+         width: 30px !important;
+         height: auto;
+         border-radius: 50%;
+      }
    }
 }

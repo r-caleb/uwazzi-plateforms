@@ -52,7 +52,7 @@ const CandidatScreen = () => {
           Totals des candidats : <span>{candidats.length}</span>
         </h3>
         <Row className="candidat_title">
-          <Col></Col>
+          <Col xs={2}></Col>
           <Col>Nom</Col>
           <Col>Genre</Col>
           <Col>Parti Politique</Col>
@@ -64,7 +64,7 @@ const CandidatScreen = () => {
           ?.map((candidat) => (
             <Link to={`/candidat/lists/${candidat.nom}}`} key={candidat.nom}>
               <Row className="data">
-                <Col>
+                <Col xs={2}>
                   <img src={avatar} alt="candidat" />
                 </Col>
                 <Col>{candidat.nom} </Col>
