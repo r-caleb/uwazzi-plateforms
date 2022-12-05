@@ -3,6 +3,7 @@
 
 .news{
     justify-content: center;
+    margin-bottom: 2rem;
     &__banner{
         background-color: $blue-color;
         width: 65%;
@@ -32,11 +33,10 @@
         bottom:0px;
         left: 0px;
         width: 100%;
-        height: 140px;
         opacity: 0.89;
         background-color: $black-color;
-        h5{
-            font-size: 1.1rem !important;
+        .title__news{
+            font-size: 1rem;
         }
         p{
             font-size: 0.8rem;
@@ -45,16 +45,6 @@
         }
         img{
             width: 100%;
-        }
-        .contenu{
-            overflow: hidden;
-            display: -webkit-box;
-            text-overflow: ellipsis;
-            -webkit-line-clamp: 2;
-            -webkit-box-orient: vertical;
-            font-size: 0.9rem;
-            line-height: 1.2rem;
-            height: 2.3rem;
         }
         .social_link{
             display: flex;
@@ -86,7 +76,6 @@
         bottom:0px;
         left: 0px;
         width: 100%;
-        height: 112px;
         opacity: 0.89;
         background-color: $black-color;
         .title_info{
@@ -101,15 +90,6 @@
         }
         img{
             width: 100%;
-        }
-        .contenu{
-            overflow: hidden;
-            display: -webkit-box;
-            -webkit-line-clamp: 1;
-            -webkit-box-orient: vertical;
-            font-size: 0.7rem;
-            line-height: 1.2rem;
-            height: 1rem;
         }
         .social_link{
             display: flex;

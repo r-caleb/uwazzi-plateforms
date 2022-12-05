@@ -56,11 +56,9 @@ const InfoScreen = () => {
                 <Card.Img src={avatar} alt="Card image" />
                 <Card.ImgOverlay>
                   <Card.Body className="bottom_left">
-                    <Card.Title>{info.titre}</Card.Title>
-                    <Card.Text
-                      className="contenu"
-                      dangerouslySetInnerHTML={{ __html: info.contenu }}
-                    />
+                    <Card.Title className="title__news">
+                      {info.titre}
+                    </Card.Title>
                     <Card.Text style={{ textDecoration: "underline" }}>
                       {info.date}
                     </Card.Text>
@@ -70,10 +68,12 @@ const InfoScreen = () => {
                         <FacebookShareButton url={url}>
                           <FacebookIcon size={32} round logoFillColor="white" />
                         </FacebookShareButton>
-                        <FacebookMessengerShareButton
-                          url={url}
-                        >
-                          <FacebookMessengerIcon size={32} round logoFillColor="white" />
+                        <FacebookMessengerShareButton url={url}>
+                          <FacebookMessengerIcon
+                            size={32}
+                            round
+                            logoFillColor="white"
+                          />
                         </FacebookMessengerShareButton>
                         <WhatsappShareButton
                           title="visitez cet article"
