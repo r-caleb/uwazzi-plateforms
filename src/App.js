@@ -17,6 +17,8 @@ import ResultatScreen from "./screens/resultat/ResultatScreen";
 import ProvinceStat from "./screens/statistique/center/ProvinceStat";
 import CenterStat from "./screens/statistique/center/CenterStat";
 import OneCenterStat from "./screens/statistique/center/OneCenterStat";
+import OneResultProvince from "./screens/resultat/OneResultProvince";
+import OneResultCenter from "./screens/resultat/OneResultCenter";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -138,6 +140,22 @@ function App() {
         element={
           <Layout>
             <ResultatScreen />
+          </Layout>
+        }
+      />
+      <Route
+        path="/resultats/data/:id"
+        element={
+          <Layout>
+            <OneResultProvince />
+          </Layout>
+        }
+      />
+      <Route
+        path="/center/result/lists/:province"
+        element={
+          <Layout>
+            <OneResultCenter />
           </Layout>
         }
       />

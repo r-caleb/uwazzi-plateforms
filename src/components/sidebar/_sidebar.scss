@@ -12,7 +12,7 @@
    transition: transform 0.2s ease-in;
 
    position: sticky;
-   top: 13vh;
+   top: 10vh;
    left: 0;
    overflow-y: scroll;
    &::-webkit-scrollbar {
@@ -77,6 +77,21 @@
    /*    span {
          display: none;
       } */
+      a {
+         padding: 0.6rem 2.55rem;
+         margin: 0rem 0.7rem;
+         cursor: pointer;
+         color: $text-color;
+         text-decoration: none;
+   
+         span {
+            margin-left: 0rem !important;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 500;
+            letter-spacing: 0.4px;
+         }
+      }
      .org{
       display: none;
      } 

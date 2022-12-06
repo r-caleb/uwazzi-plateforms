@@ -14,7 +14,7 @@ const OneCandidatScreen = () => {
   };
   let candidate = nom.nom.slice(0, -1);
 
-  const fetchData = () => {
+  useEffect(() => {
     fetch(
       `https://ecoki.net/processus_E_api/api/list_candidat?filtre=Tous&search=${candidate}`
     )
@@ -24,10 +24,7 @@ const OneCandidatScreen = () => {
       .then((data) => {
         setCandidat(data.data[0]);
       });
-  };
-  useEffect(() => {
-    fetchData();
-  }, []);
+  }, [candidate]);
 
   return (
     <Container>
@@ -42,15 +39,18 @@ const OneCandidatScreen = () => {
             alt="avatar"
             className="candidat"
           />
-          <img
-            src={/* candidat.logo_parti */ avatar}
-            alt="avatar"
-            className="parti"
-          />
-          <p>{candidat.parti_politique}</p>
+          <p className="name">{candidat.nom}</p>
+          <div className="parti_politique">
+            <img
+              src={/* candidat.logo_parti */ avatar}
+              alt="avatar"
+              className="parti"
+            />
+            <p>{candidat.parti_politique}</p>
+          </div>
         </Col>
-        <Col>
-          <Table striped bordered hover>
+        <Col className="tab">
+          <Table hover>
             <tbody>
               <tr>
                 <td>Nom</td>
@@ -95,16 +95,4 @@ const OneCandidatScreen = () => {
     </Container>
   );
 };
-/** "nom": "Felix tshisekedi",
-      "photoCandidat": "portrait-of-expressive-young-man-wearing-formal-suit(1)-6377c66c2c871.jpeg",
-      "numeroCandidat": "20",
-      "fileProgramme": "certificat d'aptitude-6377c66c2c60e.pdf",
-      "sexe": "Masculin",
-      "fileCV": "BARREAU DE MAI-NDOMBE-1-6377c66c2b0ed.pdf",
-      "scrutin": "Provincial",
-      "parti_politique": "ECIDE",
-      "logo_parti": "61MY-quvOvL-637792bad6eaa.jpeg",
-      "fondateur_parti": "MARTIN FAYULU",
-      "province": "National",
-      "circonscription": */
 export default OneCandidatScreen;

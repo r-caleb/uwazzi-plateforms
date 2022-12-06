@@ -79,6 +79,16 @@
 @media (max-width: $breakpoint-small){
 
     .map__google_box{
-        height: 500px !important;
+        height: 450px !important;
+    }
+    .map__form__button{
+        button{
+            padding: 0.4rem;
+            width: 190px;
+            border-radius: 7px; 
+            border: none;
+            background-color: $blue-color;
+            color: $secondary-color;
+        }
     }
 }
