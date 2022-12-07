@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Container } from "react-bootstrap";
-import avatar from "../home/assets/rc.jpg";
 import "./infoScreen.scss";
 import ceni from "./ceni.png";
 import { Link } from "react-router-dom";
@@ -32,7 +31,11 @@ const InfoScreen = () => {
   }, []);
   return (
     <Container className="news">
-      <h4 className="title">Actualités</h4>
+      <h3>
+        <Link to="/">Accueil</Link> >
+        <em style={{ color: "#00A2DD" }}> Actualités</em>
+      </h3>
+      <hr />
       <Row className="news__banner">
         <Col md={4}>
           <img src={ceni} alt="logo" />
@@ -53,7 +56,10 @@ const InfoScreen = () => {
           <Link to={`/infos/${info.id}`}>
             <Col key={info.id}>
               <Card className="bg-dark text-white news__card">
-                <Card.Img src={avatar} alt="Card image" />
+                <Card.Img
+                  src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}
+                  alt="Card image"
+                />
                 <Card.ImgOverlay>
                   <Card.Body className="bottom_left">
                     <Card.Title className="title__news">

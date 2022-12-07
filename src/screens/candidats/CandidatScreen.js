@@ -6,9 +6,9 @@ import avatar from "../home/assets/rc.jpg";
 
 const keywords = [
   "Tout",
-  "Présidentielle",
-  "Législative national",
-  "Législative provincial",
+  "Presidentielle",
+  "Législatif national",
+  "Législatif provincial",
 ];
 
 const CandidatScreen = () => {
@@ -35,7 +35,11 @@ const CandidatScreen = () => {
 
   return (
     <div className="container__candidat">
-      <h2>Candidats</h2>
+      <h3>
+        <Link to="/">Accueil</Link> >{" "}
+        <em style={{ color: "#00A2DD" }}>Candidats</em>
+      </h3>
+      <hr />
       <Container>
         <div className="categoriesBar">
           {keywords.map((value, i) => (
@@ -49,7 +53,16 @@ const CandidatScreen = () => {
           ))}
         </div>
         <h3>
-          Totals des candidats : <span>{candidats.length}</span>
+          Totals des candidats :{" "}
+          <span>
+            {
+              candidats.filter((candidat) =>
+                activeElement !== "Tout"
+                  ? candidat.scrutin === activeElement
+                  : true
+              )?.length
+            }
+          </span>
         </h3>
         <Row className="candidat_title">
           <Col xs={2}></Col>
@@ -65,7 +78,10 @@ const CandidatScreen = () => {
             <Link to={`/candidat/lists/${candidat.nom}}`} key={candidat.nom}>
               <Row className="data">
                 <Col xs={2}>
-                  <img src={avatar} alt="candidat" />
+                  <img
+                    src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+                    alt="candidat"
+                  />
                 </Col>
                 <Col>{candidat.nom} </Col>
                 <Col>{candidat.sexe}</Col>

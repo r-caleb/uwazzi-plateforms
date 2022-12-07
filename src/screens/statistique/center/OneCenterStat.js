@@ -36,7 +36,7 @@ const OneCenterStat = () => {
           Retour vers les statistiques générales
         </span>
       </div>
-      <Row className="card_candidat row">
+      <Row className="card_center row">
         <Col className="pictures">
           <Chart
             type="donut"

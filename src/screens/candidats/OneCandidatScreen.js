@@ -25,7 +25,7 @@ const OneCandidatScreen = () => {
         setCandidat(data.data[0]);
       });
   }, [candidate]);
-
+  console.log(candidat);
   return (
     <Container>
       <div className="back">
@@ -35,15 +35,15 @@ const OneCandidatScreen = () => {
       <Row className="card_candidat row">
         <Col lg={4} className="pictures">
           <img
-            src={/* candidat.photoCandidat */ avatar}
-            alt="avatar"
+            src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+            alt="candidat"
             className="candidat"
           />
           <p className="name">{candidat.nom}</p>
           <div className="parti_politique">
             <img
-              src={/* candidat.logo_parti */ avatar}
-              alt="avatar"
+              src={`http://elektion.ecoki.net/web/assets/images/logoParti/${candidat.logo_parti}`}
+              alt="parti_politique"
               className="parti"
             />
             <p>{candidat.parti_politique}</p>
@@ -52,10 +52,6 @@ const OneCandidatScreen = () => {
         <Col className="tab">
           <Table hover>
             <tbody>
-              <tr>
-                <td>Nom</td>
-                <td>{candidat.nom}</td>
-              </tr>
               <tr>
                 <td>Numero</td>
                 <td>{candidat.numeroCandidat}</td>

@@ -34,7 +34,11 @@ const ProvinceStat = () => {
 
   return (
     <div className="container__center">
-      <h2>Provinces</h2>
+      <h3>
+        <Link to="/">Accueil</Link> > <Link to="/stats">Statistiques</Link> >
+        <em style={{ color: "#00A2DD" }}> Provinces</em>
+      </h3>
+      <hr />
       <Container>
         <h3>
           Totals des centres : <span>{totalCentre}</span>

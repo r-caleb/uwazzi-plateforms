@@ -74,7 +74,7 @@ const HomeScreen = () => {
         <h3 className="title">A LA UNE</h3>
         <Row className="home__news">
           <Col lg={5} className="over">
-            <img src={candidat} alt="info" />
+            <img src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${recent?.image}`} alt="info" />
           </Col>
           <Col>
             <h3>{recent?.titre}</h3>

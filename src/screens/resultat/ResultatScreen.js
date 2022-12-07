@@ -23,23 +23,29 @@ const ResultatScreen = () => {
   }, []);
   return (
     <div className="container__resultat">
-      <h2>Résultats</h2>
+      <h3>
+        <Link to="/">Accueil</Link> >
+        <em style={{ color: "#00A2DD" }}> Résultats</em>
+      </h3>
+      <hr />
       <Container>
         <h3>
           Totals des candidats : <span>{candidats.length}</span>
         </h3>
         {candidats.map((candidat) => (
-          <Link to={`/resultats/data/id`} key={candidat.nom}>
+          <Link to={`/resultats/data/${candidat.id}`} key={candidat.nom}>
             <Row className="data">
               <Col xs={2}>
-                <img src={avatar} alt="candidat" />
+                <img
+                  src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+                  alt="candidat"
+                />
               </Col>
               <Col>
                 <p>{candidat.nom}</p>
-                <p> Candidat {candidat.scrutin}</p>
               </Col>
               <Col>{candidat.sexe}</Col>
-              <Col>4 443 000 voix</Col>
+              <Col>Voir les resultats</Col>
             </Row>
           </Link>
         ))}

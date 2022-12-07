@@ -1,13 +1,26 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { MdArrowBack } from "react-icons/md";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import avatar from "../home/assets/rc.jpg";
 import "./resultatScreen.scss";
 
 const OneResultProvince = () => {
   const [provinces, setProvince] = useState([]);
+  const [candidatResult, setCandidatResult] = useState([]);
 
+  const id = useParams();
+  const idCandidat = id.id;
+  const fetchResult = () => {
+    fetch(
+      `https://ecoki.net/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${id}&id_province=1&id_centre=1`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data);
+      });
+  };
   const fetchData = () => {
     fetch("https://ecoki.net/processus_E_api/api/list_province?search=")
       .then((response) => {
@@ -19,6 +32,7 @@ const OneResultProvince = () => {
   };
   useEffect(() => {
     fetchData();
+    fetchResult();
   }, []);
 
   const navigateTo = useNavigate();
@@ -27,10 +41,12 @@ const OneResultProvince = () => {
   };
   return (
     <Container>
-      <div className="back">
-        <MdArrowBack size={26} onClick={handleClick} />
-        <span onClick={handleClick}>Revenir aux résultats des candidats</span>
-      </div>
+      <h3 className="h3">
+        <Link to="/">Accueil</Link> >
+        <Link to="/resultats/data"> Résultats</Link> >
+        <em style={{ color: "#00A2DD" }}> Provinces</em>
+      </h3>
+      <hr />
       <Row className="card_candidat_result row">
         <Col lg={3} className="pictures">
           <img

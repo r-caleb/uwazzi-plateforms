@@ -50,6 +50,11 @@ const CenterStat = () => {
   const communeCenter = groupObjectByField(provinceCenter, "territoire");
   return (
     <div className="container__center">
+      <h3>
+        <Link to="/">Accueil</Link> > <Link to="/stats">Statistiques</Link> >
+        <Link to="/province/lists"> Provinces</Link> > 
+        <em style={{ color: "#00A2DD" }}> Centres</em>
+      </h3>
       <Container>
         <Row className="center_title title">
           <Col>{nomProvince}</Col>

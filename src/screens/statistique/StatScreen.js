@@ -41,7 +41,11 @@ const StatScreen = () => {
   return (
     <div className="stat">
       <Container>
-        <h4 className="title">Statistiques des enrolements</h4>
+        <h3 >
+          <Link to="/">Accueil</Link> >
+          <em style={{ color: "#00A2DD" }}> Statistiques</em>
+        </h3>
+        <hr/>
         <Row>
           <Col className="total_stat">
             <div className="stat_enrolement">

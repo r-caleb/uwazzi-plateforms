@@ -44,7 +44,10 @@ const OneInfoScreen = () => {
             <h2>{news[0]?.titre}</h2>
             <hr />
             <p>{news[0]?.date}</p>
-            <img src={avatar} alt="info_image" />
+            <img
+              src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${news[0]?.image}`}
+              alt="info_image"
+            />
             <br />
             <br />
             <p dangerouslySetInnerHTML={{ __html: news[0]?.contenu }} />
@@ -72,7 +75,10 @@ const OneInfoScreen = () => {
             <Link to={`/infos/${info.id}`}>
               <Col key={info.id}>
                 <Card className="bg-dark text-white news__card1">
-                  <Card.Img src={avatar} alt="Card image" />
+                  <Card.Img
+                    src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}
+                    alt="Card image"
+                  />
                   <Card.ImgOverlay>
                     <Card.Body className="bottom_left">
                       <Card.Title className="title_info">

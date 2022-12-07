@@ -51,6 +51,11 @@ const CenterScreen = () => {
 
   return (
     <div className="container__center">
+      <h3>
+        <Link to="/">Accueil</Link> ><Link to="/province/lists">Provinces</Link>
+        ><em style={{ color: "#00A2DD" }}> Centres</em>
+      </h3>
+      <hr />
       <Container>
         <Row className="center_title title">
           <Col>{nomProvince}</Col>
@@ -87,9 +92,7 @@ const CenterScreen = () => {
                         <strong>{item.nomCentre}</strong>
                       </Col>
                       <Col>{item.NbrDesBureaux} bureaux de votes</Col>
-                      <Col>
-                        Avenue des écoliers N°13 Réf: École de navigation
-                      </Col>
+                      <Col>{item.adresse}</Col>
                     </Row>
                   </Link>
                 ))}

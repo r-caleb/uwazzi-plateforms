@@ -84,7 +84,7 @@ const MapScreen = () => {
           }}
           onLoad={(map) => setMap(map)}
         >
-          <MarkerF position={center} />
+          <MarkerF position={center} title="Your location" name="marker name" />
           <MarkerF position={actualPosition} />
           <MarkerF position={bukin} />
           <MarkerF position={showbuzz} />
