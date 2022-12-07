@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { Col, Container, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import "./resultatScreen.scss";
-import avatar from "../home/assets/rc.jpg";
 
 const ResultatScreen = () => {
   const [candidats, setCandidat] = useState([]);

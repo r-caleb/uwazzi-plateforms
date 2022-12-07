@@ -26,8 +26,9 @@
   .data {
     background-color: $secondary-color;
     box-shadow: 0px 0px 5px 2px rgba(111, 111, 117, 0.2);
-    margin-bottom: 0.9rem;
+    margin-bottom: 0.8rem;
     border-radius: 0.9rem;
+    height: 68px;
     text-align: center;
     &:hover {
       border: 1px solid $blue-color;
@@ -58,6 +59,7 @@
       height: 100px;
       border-radius: 50%;
       margin-bottom: 0.5rem;
+      object-fit: cover;
     }
     .parti_politique {
       display: flex;
@@ -121,8 +123,8 @@
   .data {
     font-size: 0.8rem;
     img {
-      width: 30px !important;
-      height: auto;
+      width: 40px !important;
+      height: 40px !important;
       border-radius: 50%;
     }
   }

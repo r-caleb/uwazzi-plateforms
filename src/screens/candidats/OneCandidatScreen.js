@@ -25,7 +25,6 @@ const OneCandidatScreen = () => {
         setCandidat(data.data[0]);
       });
   }, [candidate]);
-  console.log(candidat);
   return (
     <Container>
       <div className="back">

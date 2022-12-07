@@ -1,24 +1,24 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
 import { Link, useNavigate, useParams } from "react-router-dom";
-import avatar from "../home/assets/rc.jpg";
 import "./resultatScreen.scss";
 
 const OneResultProvince = () => {
   const [provinces, setProvince] = useState([]);
   const [candidatResult, setCandidatResult] = useState([]);
+  const [candidats, setCandidat] = useState([]);
 
   const id = useParams();
   const idCandidat = id.id;
   const fetchResult = () => {
     fetch(
-      `https://ecoki.net/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${id}&id_province=1&id_centre=1`
+      `https://ecoki.net/processus_E_api/api/resultats/candidat_pays?id_candidat=1`
     )
       .then((response) => {
         return response.json();
       })
       .then((data) => {
-        console.log(data);
+        setCandidatResult(data.datas);
       });
   };
   const fetchData = () => {
@@ -27,18 +27,31 @@ const OneResultProvince = () => {
         return response.json();
       })
       .then((data) => {
-        setProvince(data.data.sort());
+        setProvince(data.data);
       });
   };
   useEffect(() => {
     fetchData();
     fetchResult();
+    fetch(
+      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Présidentielle&search="
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCandidat(data.data);
+      });
   }, []);
-
+  console.log(candidatResult);
   const navigateTo = useNavigate();
   const handleClick = () => {
     navigateTo("/resultats/data");
   };
+  const candidate = candidats.filter(
+    (candidat) => candidat.id && candidat.id === idCandidat
+  );
+  console.log(candidatResult);
   return (
     <Container>
       <h3 className="h3">
@@ -50,26 +63,27 @@ const OneResultProvince = () => {
       <Row className="card_candidat_result row">
         <Col lg={3} className="pictures">
           <img
-            src={/* candidat.photoCandidat */ avatar}
+            src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidate[0]?.photoCandidat}`}
             alt="avatar"
             className="candidat"
           />
-          <p>René Caleb AKASA</p>
+          <p>{candidate[0]?.nom}</p>
           <div className="parti_politique">
             <img
-              src={/* candidat.logo_parti */ avatar}
+              src={`http://elektion.ecoki.net/web/assets/images/logoParti/${candidate[0]?.logo_parti}`}
               alt="avatar"
               className="parti"
             />
             <p>UDPS</p>
           </div>
+          <p style={{color:"#00A2DD"}}>{candidatResult.total} % <span>({candidatResult.total_voix} voix)</span></p>
         </Col>
         <Col className="tab">
           {provinces.map((province) => (
             <Link to={`/center/lists/${province.nom}`} key={province.id}>
               <Row className="data">
                 <Col>{province.nom}</Col>
-                <Col>10% (5 000 000) </Col>
+                <Col>10% (5 000 ) </Col>
               </Row>
             </Link>
           ))}
