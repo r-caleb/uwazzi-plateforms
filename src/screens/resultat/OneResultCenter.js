@@ -65,9 +65,19 @@ const OneResultCenter = () => {
 
   return (
     <div className="container__center">
+      <h3 className="h3">
+        <Link to="/">Accueil</Link> >
+        <Link to="/resultats/data"> Résultats</Link> >
+        <Link to={`/resultats/data/${idCandidat}`}> Provinces</Link> >
+        <em style={{ color: "#00A2DD" }}> Centres</em>
+      </h3>
+      <hr />
       <Container>
         <Row className="center_title title">
-          <Col>{nomProvince} : {provinceResult.total} % ({provinceResult.total_voix} voix)</Col>
+          <Col>
+            {nomProvince} : {provinceResult.total} % (
+            {provinceResult.total_voix} voix)
+          </Col>
           <Col>{provinceCenter.length} centres électoraux</Col>
         </Row>
         <Row className="center_title title">
@@ -86,24 +96,22 @@ const OneResultCenter = () => {
             </Form.Select>
           </Col>
         </Row>
-        {communeCenter?.map((center) => (
+        {communeCenter?.map((center, index) => (
           <div className="town__center" key={center.name}>
             <div>
               <div className="quarter">{center.name}</div>
               <Row className="data_center">
                 {center.values.map((item) => (
                   <Link
-                    to={`/center/result/${item.nomCentre}`}
-                    title="Cliquez pour voir plus de détails sur le centre"
+                    to={`/bureau/result/lists/${index+1},${idCandidat},${idProvince},${item.nomCentre}`}
+                    title="Cliquez pour voir plus de détails des résultats du centre"
                   >
                     <Row className="separate">
                       <Col>
                         <strong>{item.nomCentre}</strong>
                       </Col>
                       <Col>{item.NbrDesBureaux} bureaux de votes</Col>
-                      <Col>
-                      {item.adresse}
-                      </Col>
+                      <Col>{item.adresse}</Col>
                     </Row>
                   </Link>
                 ))}

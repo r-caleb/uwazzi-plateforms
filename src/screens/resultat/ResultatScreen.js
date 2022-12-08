@@ -8,7 +8,7 @@ const ResultatScreen = () => {
 
   const fetchData = () => {
     fetch(
-      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Présidentielle&search="
+      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
     )
       .then((response) => {
         return response.json();

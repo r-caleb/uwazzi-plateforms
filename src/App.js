@@ -20,6 +20,7 @@ import OneCenterStat from "./screens/statistique/center/OneCenterStat";
 import OneResultProvince from "./screens/resultat/OneResultProvince";
 import OneResultCenter from "./screens/resultat/OneResultCenter";
 import Footer from "./components/footer/Footer";
+import OneResultBureau from "./screens/resultat/OneResultBureau";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -39,7 +40,7 @@ const Layout = ({ children }) => {
 
 function App() {
   return (
-    <Routes >
+    <Routes>
       <Route
         path="/"
         element={
@@ -157,6 +158,14 @@ function App() {
         element={
           <Layout>
             <OneResultCenter />
+          </Layout>
+        }
+      />
+      <Route
+        path="/bureau/result/lists/:center"
+        element={
+          <Layout>
+            <OneResultBureau />
           </Layout>
         }
       />

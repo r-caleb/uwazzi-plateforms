@@ -7,8 +7,8 @@ import avatar from "../home/assets/rc.jpg";
 const keywords = [
   "Tout",
   "Presidentielle",
-  "Législatif national",
-  "Législatif provincial",
+  "Legislatif National",
+  "Legislatif Provincial",
 ];
 
 const CandidatScreen = () => {

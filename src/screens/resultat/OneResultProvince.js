@@ -8,7 +8,6 @@ const OneResultProvince = () => {
   const [candidatResult, setCandidatResult] = useState([]);
   const [candidats, setCandidat] = useState([]);
   const [provinceResult, setProvinceResult] = useState([]);
-  const a = [];
   const id = useParams();
   const idCandidat = id.id;
   const fetchData = () => {
@@ -37,7 +36,7 @@ const OneResultProvince = () => {
     fetchData();
     fetchResult();
     fetch(
-      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Présidentielle&search="
+      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
     )
       .then((response) => {
         return response.json();
@@ -53,7 +52,7 @@ const OneResultProvince = () => {
   const candidate = candidats.filter(
     (candidat) => candidat.id && candidat.id === idCandidat
   );
-
+  console.log(candidate);
   return (
     <Container>
       <h3 className="h3">
@@ -85,10 +84,12 @@ const OneResultProvince = () => {
         </Col>
         <Col className="tab">
           {provinces?.map((province) => (
-            <Link to={`/center/result/lists/${province.id},${candidate[0]?.id},${province.nom}`} key={province.id}>
+            <Link
+              to={`/center/result/lists/${province.id},${candidate[0]?.id},${province.nom}`}
+              key={province.id}
+            >
               <Row className="data">
                 <Col>{province.nom}</Col>
-                <Col>10% (5 000 ) {province.id} </Col>
               </Row>
             </Link>
           ))}
