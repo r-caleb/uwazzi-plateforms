@@ -35,9 +35,7 @@ const OneCenterStat = () => {
     <Container>
       <div className="back">
         <MdArrowBack size={26} onClick={handleClick} />
-        <span onClick={handleClick}>
-          Retour 
-        </span>
+        <span onClick={handleClick}>Retour</span>
       </div>
       <Row className="card_center row">
         <Col className="pictures">
