@@ -6,9 +6,14 @@ const OneResultCenter = () => {
   const [activeElement, setActiveElement] = useState(
     "Selectionner un district"
   );
-  const [centers, setCenter] = useParams([]);
+  const [centers, setCenter] = useState([]);
+  const [provinceResult, setProvinceResult] = useState([]);
+
   const province = useParams();
-  let nomProvince = province.province;
+  let idProvince = province.province.split(",")[0];
+  let idCandidat = province.province.split(",")[1];
+  let nomProvince = province.province.split(",")[2];
+
   const fetchData = () => {
     fetch("https://ecoki.net/processus_E_api/api/list_centre?search&id")
       .then((response) => {
@@ -20,8 +25,17 @@ const OneResultCenter = () => {
   };
   useEffect(() => {
     fetchData();
+    fetch(
+      `https://ecoki.net/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvince}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setProvinceResult(data.ResultatProv);
+      });
   }, [centers]);
-  
+
   const centerProvince = centers.filter(
     (center) => center.province === nomProvince
   );
@@ -53,7 +67,7 @@ const OneResultCenter = () => {
     <div className="container__center">
       <Container>
         <Row className="center_title title">
-          <Col>{nomProvince}</Col>
+          <Col>{nomProvince} : {provinceResult.total} % ({provinceResult.total_voix} voix)</Col>
           <Col>{provinceCenter.length} centres électoraux</Col>
         </Row>
         <Row className="center_title title">
@@ -88,7 +102,7 @@ const OneResultCenter = () => {
                       </Col>
                       <Col>{item.NbrDesBureaux} bureaux de votes</Col>
                       <Col>
-                        Avenue des écoliers N°13 Réf: École de navigation
+                      {item.adresse}
                       </Col>
                     </Row>
                   </Link>

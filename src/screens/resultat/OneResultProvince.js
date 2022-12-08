@@ -7,20 +7,10 @@ const OneResultProvince = () => {
   const [provinces, setProvince] = useState([]);
   const [candidatResult, setCandidatResult] = useState([]);
   const [candidats, setCandidat] = useState([]);
-
+  const [provinceResult, setProvinceResult] = useState([]);
+  const a = [];
   const id = useParams();
   const idCandidat = id.id;
-  const fetchResult = () => {
-    fetch(
-      `https://ecoki.net/processus_E_api/api/resultats/candidat_pays?id_candidat=1`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setCandidatResult(data.datas);
-      });
-  };
   const fetchData = () => {
     fetch("https://ecoki.net/processus_E_api/api/list_province?search=")
       .then((response) => {
@@ -30,6 +20,19 @@ const OneResultProvince = () => {
         setProvince(data.data);
       });
   };
+
+  const fetchResult = () => {
+    fetch(
+      `https://ecoki.net/processus_E_api/api/resultats/candidat_pays?id_candidat=${idCandidat}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setCandidatResult(data.datas);
+      });
+  };
+
   useEffect(() => {
     fetchData();
     fetchResult();
@@ -43,7 +46,6 @@ const OneResultProvince = () => {
         setCandidat(data.data);
       });
   }, []);
-  console.log(candidatResult);
   const navigateTo = useNavigate();
   const handleClick = () => {
     navigateTo("/resultats/data");
@@ -51,7 +53,7 @@ const OneResultProvince = () => {
   const candidate = candidats.filter(
     (candidat) => candidat.id && candidat.id === idCandidat
   );
-  console.log(candidatResult);
+
   return (
     <Container>
       <h3 className="h3">
@@ -74,16 +76,19 @@ const OneResultProvince = () => {
               alt="avatar"
               className="parti"
             />
-            <p>UDPS</p>
+            <p>{candidate[0]?.parti_politique}</p>
           </div>
-          <p style={{color:"#00A2DD"}}>{candidatResult.total} % <span>({candidatResult.total_voix} voix)</span></p>
+          <p style={{ color: "#00A2DD" }}>
+            {candidatResult.total} %{" "}
+            <span>({candidatResult.total_voix} voix)</span>
+          </p>
         </Col>
         <Col className="tab">
-          {provinces.map((province) => (
-            <Link to={`/center/lists/${province.nom}`} key={province.id}>
+          {provinces?.map((province) => (
+            <Link to={`/center/result/lists/${province.id},${candidate[0]?.id},${province.nom}`} key={province.id}>
               <Row className="data">
                 <Col>{province.nom}</Col>
-                <Col>10% (5 000 ) </Col>
+                <Col>10% (5 000 ) {province.id} </Col>
               </Row>
             </Link>
           ))}

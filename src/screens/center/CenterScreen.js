@@ -48,7 +48,6 @@ const CenterScreen = () => {
   };
 
   const communeCenter = groupObjectByField(provinceCenter, "territoire");
-
   return (
     <div className="container__center">
       <h3>
