@@ -9,9 +9,12 @@ import Chart from "react-apexcharts";
 const OneCenterStat = () => {
   const [stat, setStat] = useState([]);
   const id = useParams();
+  let idCenter = id.id.split(",")[0];
+  let nomProvince = id.id.split(",")[1];
+
   const fetchData = () => {
     fetch(
-      `https://ecoki.net/processus_E_api/api/list_centre?search=${id.id}&id`
+      `https://ecoki.net/processus_E_api/api/list_centre?search=${idCenter}&id`
     )
       .then((response) => {
         return response.json();
@@ -26,14 +29,14 @@ const OneCenterStat = () => {
     fetchData();
   }, []);
   const handleClick = () => {
-    navigateTo("/stats");
+    navigateTo(`/center/lists/${nomProvince}`);
   };
   return (
     <Container>
       <div className="back">
         <MdArrowBack size={26} onClick={handleClick} />
         <span onClick={handleClick}>
-          Retour vers les statistiques générales
+          Retour 
         </span>
       </div>
       <Row className="card_center row">

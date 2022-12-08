@@ -83,7 +83,7 @@ const CenterScreen = () => {
               <Row className="data_center">
                 {center.values.map((item) => (
                   <Link
-                    to={`/center/stat/${item.nomCentre}`}
+                    to={`/center/stat/${item.nomCentre},${nomProvince}`}
                     title="Cliquez pour voir plus de détails sur le centre"
                   >
                     <Row className="separate">

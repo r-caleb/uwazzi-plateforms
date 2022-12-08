@@ -52,7 +52,7 @@ const CenterStat = () => {
     <div className="container__center">
       <h3>
         <Link to="/">Accueil</Link> > <Link to="/stats">Statistiques</Link> >
-        <Link to="/province/lists"> Provinces</Link> > 
+        <Link to="/province/lists"> Provinces</Link> >
         <em style={{ color: "#00A2DD" }}> Centres</em>
       </h3>
       <Container>
@@ -83,7 +83,7 @@ const CenterStat = () => {
               <Row className="data_center">
                 {center.values.map((item) => (
                   <Link
-                    to={`/center/stat/${item.nomCentre}`}
+                    to={`/center/stat/${item.nomCentre},${nomProvince}`}
                     title="Cliquez pour voir plus de détails sur le centre"
                   >
                     <Row className="separate">
