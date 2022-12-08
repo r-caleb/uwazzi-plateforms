@@ -11,6 +11,7 @@ const OneResultBureau = () => {
   let idCandidat = center.center.split(",")[1];
   let idProvince = center.center.split(",")[2];
   let nomCenter = center.center.split(",")[3];
+  let nomProvince = center.center.split(",")[4];
 
   const fetchData = () => {
     fetch(
@@ -45,14 +46,17 @@ const OneResultBureau = () => {
   const bureauxNameFilter = bureaux2.map((bureau) => {
     return bureau.NomBureau;
   });
-  console.log(bureauxNameFilter);
   return (
     <Container>
       <h3 className="h3">
-        <Link to="/">Accueil</Link> >
         <Link to="/resultats/data"> Résultats</Link> >
         <Link to={`/resultats/data/${idCandidat}`}> Provinces</Link> >
-        <em style={{ color: "#00A2DD" }}> Centres</em>
+        <Link
+          to={`/center/result/lists/${idProvince},${idCandidat},${nomProvince}`}
+        >
+          Centres
+        </Link>
+        ><em style={{ color: "#00A2DD" }}> Bureaux</em>
       </h3>
       <hr />
       <Row className="card_candidat_result row">

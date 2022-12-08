@@ -22,7 +22,7 @@ const MapScreen = () => {
   const [duration, setDuration] = useState("");
 
   const location = UseGeolocation();
-  const center = { lat: -4.301620205190552, lng: 15.31484481006298 };
+  const center = { lat: -4.3015999, lng: 15.3145944 };
   const showbuzz = { lat: -4.322195258016164, lng: 15.272767420704044 };
   const bukin = { lat: -4.322342359945673, lng: 15.276442046855236 };
   const planeteJ = { lat: -4.319967328927121, lng: 15.274113889547799 };

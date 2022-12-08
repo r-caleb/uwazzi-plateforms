@@ -103,7 +103,11 @@ const OneResultCenter = () => {
               <Row className="data_center">
                 {center.values.map((item) => (
                   <Link
-                    to={`/bureau/result/lists/${index+1},${idCandidat},${idProvince},${item.nomCentre}`}
+                    to={`/bureau/result/lists/${
+                      index + 1
+                    },${idCandidat},${idProvince},${
+                      item.nomCentre
+                    },${nomProvince}`}
                     title="Cliquez pour voir plus de détails des résultats du centre"
                   >
                     <Row className="separate">
