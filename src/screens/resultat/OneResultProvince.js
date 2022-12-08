@@ -52,7 +52,6 @@ const OneResultProvince = () => {
   const candidate = candidats.filter(
     (candidat) => candidat.id && candidat.id === idCandidat
   );
-  console.log(candidate);
   return (
     <Container>
       <h3 className="h3">

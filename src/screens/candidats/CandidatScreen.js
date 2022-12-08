@@ -11,7 +11,7 @@ const keywords = [
   "Legislatif Provincial",
 ];
 
-const CandidatScreen = () => {
+const CandidatScreen = ({ }) => {
   const [activeElement, setActiveElement] = useState("Tout");
   const [candidats, setCandidat] = useState([]);
 
