@@ -26,7 +26,7 @@ const Header = ({ handleToggleSidebar }) => {
       <img src={logo} alt="" className="header__logo" />
 
       <div className="header__icons">
-        <form onSubmit={handleSubmit}>
+        {/* <form onSubmit={handleSubmit}>
           <input
             type="text"
             placeholder="Search"
@@ -36,7 +36,7 @@ const Header = ({ handleToggleSidebar }) => {
           <button type="submit">
             <AiOutlineSearch size={22} />
           </button>
-        </form>
+        </form> */}
         <FaLanguage size={40} />
       </div>
     </div>

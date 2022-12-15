@@ -25,7 +25,6 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
       className={sidebar ? "sidebar open" : "sidebar"}
       onClick={() => handleToggleSidebar(false)}
     >
-      <h2> MENU</h2>
       <NavLink
         to="/"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
@@ -54,8 +53,6 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
           <span>Centres</span>
         </li>
       </NavLink>
-      <hr />
-      <h2>SOUS MENU</h2>
       <NavLink
         to="/center/map"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}

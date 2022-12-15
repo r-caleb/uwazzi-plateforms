@@ -23,7 +23,7 @@
     &__banner{
         background-color: $blue-color;
         width: 65%;
-        margin: 1rem auto 3rem !important;
+        margin: 1rem auto 2rem !important;
         padding: 0.7rem;
         align-items: center;
         border-radius: 40px;
@@ -32,12 +32,47 @@
         box-shadow: 0px 0px 10px 10px rgba(50, 50, 230, 0.185);
         
         img{
-            width: 200px;
-            height: 200px;
-            padding: 1rem;
+            width: 150px;
+            height: 150px;
             opacity: 1;
         }
     }
+    form {
+        flex: 0.3;
+        display: flex;
+        padding: 0.1rem;
+        margin: 0 3rem;
+        height: 35px;
+        border-radius: 8px;
+        border: none;
+        background-color: $primary-color;
+  
+        input {
+           width: 100%;
+           border: 1px solid #dcdcdc;
+           font-weight: 500;
+           background: $secondary-color;
+           padding: 0.3rem;
+           color: $text-color;
+           font-size: 14px;
+           border-radius: 10px 0px 0px 10px;
+  
+           &:focus {
+              outline: none;
+           }
+        }
+  
+        button {
+           padding: 0 1rem;
+           color: $primary-color;
+           background: $blue-color;
+           border: none;
+           border-radius: 0px 10px 10px 0px;
+           &:focus {
+              border: none;
+           }
+        }
+     }
     &__card{
         width: 100%;
         min-height: 290px;

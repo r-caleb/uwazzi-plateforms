@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col, Card, Carousel } from "react-bootstrap";
 import "./homeScreen.scss";
-import candidat from "./assets/rc.jpg";
 import slide2 from "./assets/electa.jpg";
 import candidate from "./assets/vote.jpg";
 import slide1 from "./assets/batiment.jpg";
@@ -74,7 +73,10 @@ const HomeScreen = () => {
         <h3 className="title">A LA UNE</h3>
         <Row className="home__news">
           <Col lg={5} className="over">
-            <img src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${recent?.image}`} alt="info" />
+            <img
+              src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${recent?.image}`}
+              alt="info"
+            />
           </Col>
           <Col>
             <h3>{recent?.titre}</h3>

@@ -2,16 +2,20 @@ import React, { useState, useEffect } from "react";
 import "./centerScreen.scss";
 import { Col, Container, Form, Row } from "react-bootstrap";
 import { Link, useParams } from "react-router-dom";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const CenterScreen = () => {
   const [activeElement, setActiveElement] = useState(
     "Selectionner un district"
   );
   const [centers, setCenter] = useState([]);
+  const [input, setInput] = useState("");
   const province = useParams();
   let nomProvince = province.province;
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/list_centre?search&id")
+    fetch(
+      `https://ecoki.net/processus_E_api/api/list_centre?search=${input}&id`
+    )
       .then((response) => {
         return response.json();
       })
@@ -21,7 +25,7 @@ const CenterScreen = () => {
   };
   useEffect(() => {
     fetchData();
-  }, [centers]);
+  }, [input]);
   const centerProvince = centers.filter(
     (center) => center.province === nomProvince
   );
@@ -46,15 +50,35 @@ const CenterScreen = () => {
     });
     return Object.values(outputs);
   };
-
   const communeCenter = groupObjectByField(provinceCenter, "territoire");
+  const handleSubmit = (e) => {
+    e.preventDefault();
+  };
   return (
     <div className="container__center">
-      <h3>
-        <Link to="/">Accueil</Link> ><Link to="/province/lists">Provinces</Link>
-        ><em style={{ color: "#00A2DD" }}> Centres</em>
-      </h3>
-      <hr />
+      <Row>
+        <Col xs={9} md={7}>
+          <h3>
+            <Link to="/">Accueil</Link> >
+            <Link to="/province/lists"> Provinces </Link> >
+            <em style={{ color: "#00A2DD" }}> Centres</em>
+          </h3>
+        </Col>
+        <Col>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Chercher un centre"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button type="submit">
+              <AiOutlineSearch size={22} />
+            </button>
+          </form>
+        </Col>
+        <hr />
+      </Row>
       <Container>
         <Row className="center_title title">
           <Col>{nomProvince}</Col>

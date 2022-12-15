@@ -19,7 +19,6 @@ import CenterStat from "./screens/statistique/center/CenterStat";
 import OneCenterStat from "./screens/statistique/center/OneCenterStat";
 import OneResultProvince from "./screens/resultat/OneResultProvince";
 import OneResultCenter from "./screens/resultat/OneResultCenter";
-import Footer from "./components/footer/Footer";
 import OneResultBureau from "./screens/resultat/OneResultBureau";
 
 const Layout = ({ children }) => {

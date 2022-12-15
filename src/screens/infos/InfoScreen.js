@@ -13,28 +13,48 @@ import {
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "react-share";
+import { AiOutlineSearch } from "react-icons/ai";
 
 const InfoScreen = () => {
   const [infos, setInfo] = useState([]);
+  const [input, setInput] = useState("");
   let url = "https://www.npmjs.com/package/react-share";
-  const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/articles?search=")
+
+  useEffect(() => {
+    fetch(`https://ecoki.net/processus_E_api/api/articles?search=${input}`)
       .then((response) => {
         return response.json();
       })
       .then((data) => {
         setInfo(data.data);
       });
+  }, [input]);
+  const handleSubmit = (e) => {
+    e.preventDefault();
   };
-  useEffect(() => {
-    fetchData();
-  }, []);
   return (
     <Container className="news">
-      <h3>
-        <Link to="/">Accueil</Link> >
-        <em style={{ color: "#00A2DD" }}> Actualités</em>
-      </h3>
+      <Row>
+        <Col xs={1} md={7}>
+          <h3>
+            <Link to="/">Accueil</Link> >
+            <em style={{ color: "#00A2DD" }}> Actualités</em>
+          </h3>
+        </Col>
+        <Col>
+          <form onSubmit={handleSubmit}>
+            <input
+              type="text"
+              placeholder="Chercher un article"
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+            />
+            <button type="submit">
+              <AiOutlineSearch size={22} />
+            </button>
+          </form>
+        </Col>
+      </Row>
       <hr />
       <Row className="news__banner">
         <Col md={4}>
@@ -42,15 +62,13 @@ const InfoScreen = () => {
         </Col>
         <Col>
           <p>
-            Pour une intégrité totale aux elections, la confiance de la
-            population à chaque étape du processus électorale est importante
-            <br />
-            <br />
-            Les données reccueillies fournissent une base pour les processus de
-            prise de decision au niveau de politique et des projets
+            Pour une intégrité totale aux elections, garder la confiance de la
+            population et la transparence à chaque étape du processus électorale
+            est importante.
           </p>
         </Col>
       </Row>
+
       <Row xs={1} md={3} className="g-4">
         {infos.map((info) => (
           <Link to={`/infos/${info.id}`}>
