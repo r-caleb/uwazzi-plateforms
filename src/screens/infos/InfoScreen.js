@@ -35,7 +35,7 @@ const InfoScreen = () => {
   return (
     <Container className="news">
       <Row>
-        <Col xs={1} md={7}>
+        <Col xs={7} md={7}>
           <h3>
             <Link to="/">Accueil</Link> >
             <em style={{ color: "#00A2DD" }}> Actualités</em>
