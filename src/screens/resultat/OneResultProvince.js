@@ -20,6 +20,8 @@ const OneResultProvince = () => {
       });
   };
 
+  const idProvinces = provinces.map((province) => parseInt(province.id));
+  console.log(idProvinces);
   const fetchResult = () => {
     fetch(
       `https://ecoki.net/processus_E_api/api/resultats/candidat_pays?id_candidat=${idCandidat}`
@@ -44,14 +46,21 @@ const OneResultProvince = () => {
       .then((data) => {
         setCandidat(data.data);
       });
+    fetch(
+      `https://ecoki.net/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvinces}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        setProvinceResult(data.ResultatProv);
+      });
   }, []);
-  const navigateTo = useNavigate();
-  const handleClick = () => {
-    navigateTo("/resultats/data");
-  };
+  console.log(provinceResult);
   const candidate = candidats.filter(
     (candidat) => candidat.id && candidat.id === idCandidat
   );
+
   return (
     <Container>
       <h3 className="h3">

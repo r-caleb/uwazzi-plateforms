@@ -5,6 +5,7 @@ import "./resultatScreen.scss";
 
 const ResultatScreen = () => {
   const [candidats, setCandidat] = useState([]);
+  const [candidatResult, setCandidatResult] = useState([]);
 
   const fetchData = () => {
     fetch(
@@ -19,7 +20,7 @@ const ResultatScreen = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [candidats]);
   return (
     <div className="container__resultat">
       <h3>

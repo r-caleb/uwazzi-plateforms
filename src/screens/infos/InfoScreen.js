@@ -76,7 +76,7 @@ const InfoScreen = () => {
               <Card className="bg-dark text-white news__card">
                 <Card.Img
                   src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}
-                  alt="Card image"
+                  alt="image du news"
                 />
                 <Card.ImgOverlay>
                   <Card.Body className="bottom_left">

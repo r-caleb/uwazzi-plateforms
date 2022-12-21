@@ -9,8 +9,6 @@ import {
   FaInfoCircle,
   FaChartBar,
 } from "react-icons/fa";
-import ceni from "./ceni.png";
-import interniews from "./interniews.png";
 import { NavLink } from "react-router-dom";
 
 const SideBar = ({ sidebar, handleToggleSidebar }) => {
@@ -25,6 +23,8 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
       className={sidebar ? "sidebar open" : "sidebar"}
       onClick={() => handleToggleSidebar(false)}
     >
+      <h2> MENUS</h2>
+      <hr />
       <NavLink
         to="/"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
