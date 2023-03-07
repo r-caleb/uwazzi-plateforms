@@ -15,7 +15,7 @@ const OneResultCenter = () => {
   let nomProvince = province.province.split(",")[2];
 
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/list_centre?search&id")
+    fetch("http://de-vie.com/processus_E_api/api/list_centre?search&id")
       .then((response) => {
         return response.json();
       })

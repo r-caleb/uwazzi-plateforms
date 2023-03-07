@@ -10,7 +10,7 @@ const ProvinceScreen = () => {
   const [input, setInput] = useState("");
 
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/list_province?search=")
+    fetch("http://de-vie.com/processus_E_api/api/list_province?search=")
       .then((response) => {
         return response.json();
       })
@@ -19,7 +19,7 @@ const ProvinceScreen = () => {
       });
   };
   const fetchCenterNumber = () => {
-    fetch("https://ecoki.net/processus_E_api/api/list_centre?search&id")
+    fetch("http://de-vie.com/processus_E_api/api/list_centre?search&id")
       .then((response) => {
         return response.json();
       })

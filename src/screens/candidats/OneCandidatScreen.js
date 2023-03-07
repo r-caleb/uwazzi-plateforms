@@ -16,7 +16,7 @@ const OneCandidatScreen = () => {
 
   useEffect(() => {
     fetch(
-      `https://ecoki.net/processus_E_api/api/list_candidat?filtre=Tous&search=${candidate}`
+      `http://de-vie.com/processus_E_api/api/list_candidat?filtre=Tous&search=${candidate}`
     )
       .then((response) => {
         return response.json();

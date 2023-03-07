@@ -17,7 +17,7 @@ import {
 const OneInfoScreen = () => {
   const [infos, setInfo] = useState([]);
   const id = useParams();
-  let url = "https://www.npmjs.com/package/react-share";
+  let url = `https://uwazzi-plateforms.vercel.app/infos/${id.id}`;
 
   const fetchData = () => {
     fetch("https://ecoki.net/processus_E_api/api/articles?search=")
@@ -32,7 +32,7 @@ const OneInfoScreen = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  const news = infos.filter((info) => info && info.id === id.id);
+  const news = infos.filter((info) => info && info.id == id.id);
 
   return (
     <Container className="news">
@@ -72,8 +72,8 @@ const OneInfoScreen = () => {
         </Col>
         <Col lg={3} md={4} className="g-4">
           {infos.map((info) => (
-            <Link to={`/infos/${info.id}`}>
-              <Col key={info.id}>
+            <Link to={`/infos/${info.id}`} key={info.id}>
+              <Col>
                 <Card className="bg-dark text-white news__card1">
                   <Card.Img
                     src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}

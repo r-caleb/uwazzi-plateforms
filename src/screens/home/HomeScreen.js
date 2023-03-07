@@ -22,7 +22,7 @@ const HomeScreen = () => {
   };
 
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/articles?search=")
+    fetch("http://de-vie.com/processus_E_api/api/articles?search=")
       .then((response) => {
         return response.json();
       })

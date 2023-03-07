@@ -9,7 +9,7 @@ const StatScreen = () => {
   const [province, setProvince] = useState([]);
   let arr = [];
   const fetchCenterNumber = () => {
-    fetch("https://ecoki.net/processus_E_api/api/list_province?search=")
+    fetch("http://de-vie.com/processus_E_api/api/list_province?search=")
       .then((response) => {
         return response.json();
       })

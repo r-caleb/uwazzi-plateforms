@@ -9,7 +9,7 @@ const ResultatScreen = () => {
 
   const fetchData = () => {
     fetch(
-      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
+      "http://de-vie.com/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
     )
       .then((response) => {
         return response.json();

@@ -18,7 +18,7 @@ import { AiOutlineSearch } from "react-icons/ai";
 const InfoScreen = () => {
   const [infos, setInfo] = useState([]);
   const [input, setInput] = useState("");
-  let url = "https://www.npmjs.com/package/react-share";
+  let url = "https://uwazzi-plateforms.vercel.app/infos/2";
 
   useEffect(() => {
     fetch(`https://ecoki.net/processus_E_api/api/articles?search=${input}`)
@@ -71,8 +71,8 @@ const InfoScreen = () => {
 
       <Row xs={1} md={3} className="g-4">
         {infos.map((info) => (
-          <Link to={`/infos/${info.id}`}>
-            <Col key={info.id}>
+          <Link to={`/infos/${info.id}`} key={info.id}>
+            <Col>
               <Card className="bg-dark text-white news__card">
                 <Card.Img
                   src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}

@@ -18,7 +18,7 @@ const CandidatScreen = () => {
 
   const fetchData = () => {
     fetch(
-      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Tous&search="
+      "http://de-vie.com/processus_E_api/api/list_candidat?filtre=Tous&search="
     )
       .then((response) => {
         return response.json();
