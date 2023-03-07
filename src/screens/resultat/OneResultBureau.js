@@ -43,20 +43,20 @@ const OneResultBureau = () => {
   const bureauxFilter = bureaux2.map((bureau) => {
     return parseInt(bureau.NombreVoix);
   });
-  const bureauxNameFilter = bureaux2.map((bureau) => {
+  const bureauxNameFilter = bureaux2.map((bureau) => { 
     return bureau.NomBureau;
   });
   return (
     <Container>
       <h3 className="h3">
-        <Link to="/resultats/data"> Résultats</Link> >
-        <Link to={`/resultats/data/${idCandidat}`}> Provinces</Link> >
+        <Link to="/resultats/data"> Résultats</Link> {`>`}
+        <Link to={`/resultats/data/${idCandidat}`}> Provinces</Link> {`>`}
         <Link
           to={`/center/result/lists/${idProvince},${idCandidat},${nomProvince}`}
         >
           Centres
         </Link>
-        ><em style={{ color: "#00A2DD" }}> Bureaux</em>
+        {`>`}<em style={{ color: "#00A2DD" }}> Bureaux</em>
       </h3>
       <hr />
       <Row className="card_candidat_result row">
@@ -101,7 +101,7 @@ const OneResultBureau = () => {
         <Col className="tab">
           <p>Les différents bureaux de vote du centre : {nomCenter}</p>
           {bureaux?.data?.map((bureau) => (
-            <Row className="data">
+            <Row className="data" key={bureau.NomBureau}>
               <Col>{bureau.NomBureau}</Col>
               <Col>{bureau.NombreVoix} voix</Col>
             </Row>

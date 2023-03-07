@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
-import { Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import { Link } from "react-router-dom";
+import ResultGeneral from "../../components/resultGeneral/ResultGeneral";
 import "./resultatScreen.scss";
 
 const ResultatScreen = () => {
@@ -24,7 +25,7 @@ const ResultatScreen = () => {
   return (
     <div className="container__resultat">
       <h3>
-        <Link to="/">Accueil</Link> >
+        <Link to="/">Accueil</Link> {`>`}
         <em style={{ color: "#00A2DD" }}> Résultats</em>
       </h3>
       <hr />
@@ -33,21 +34,7 @@ const ResultatScreen = () => {
           Totals des candidats : <span>{candidats.length}</span>
         </h3>
         {candidats.map((candidat) => (
-          <Link to={`/resultats/data/${candidat.id}`} key={candidat.nom}>
-            <Row className="data">
-              <Col xs={2}>
-                <img
-                  src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
-                  alt="candidat"
-                />
-              </Col>
-              <Col>
-                <p>{candidat.nom}</p>
-              </Col>
-              <Col>{candidat.sexe}</Col>
-              <Col>Voir les resultats</Col>
-            </Row>
-          </Link>
+          <ResultGeneral candidat={candidat} key={candidat.nom} />
         ))}
       </Container>
     </div>

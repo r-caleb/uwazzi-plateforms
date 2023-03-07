@@ -26,7 +26,7 @@ const OneResultCenter = () => {
   useEffect(() => {
     fetchData();
     fetch(
-      `https://ecoki.net/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvince}`
+      `http://de-vie.com/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvince}`
     )
       .then((response) => {
         return response.json();
@@ -35,7 +35,6 @@ const OneResultCenter = () => {
         setProvinceResult(data.ResultatProv);
       });
   }, [centers]);
-
   const centerProvince = centers.filter(
     (center) => center.province === nomProvince
   );
@@ -48,7 +47,7 @@ const OneResultCenter = () => {
     setActiveElement(e.target.value);
   };
   const categoryAll = centerProvince.map((center) => center.circonscription);
-  var categories = [...new Set(categoryAll)];
+  const categories = [...new Set(categoryAll)];
   const groupObjectByField = (items, field) => {
     const outputs = {};
     items.forEach((item) => {
@@ -66,9 +65,9 @@ const OneResultCenter = () => {
   return (
     <div className="container__center">
       <h3 className="h3">
-        <Link to="/">Accueil</Link> >
-        <Link to="/resultats/data"> Résultats</Link> >
-        <Link to={`/resultats/data/${idCandidat}`}> Provinces</Link> >
+        <Link to="/">Accueil</Link> {`>`}
+        <Link to="/resultats/data"> Résultats</Link> {`>`}
+        <Link to={`/resultats/data/${idCandidat}`}> Provinces</Link> {`>`}
         <em style={{ color: "#00A2DD" }}> Centres</em>
       </h3>
       <hr />
@@ -109,6 +108,7 @@ const OneResultCenter = () => {
                       item.nomCentre
                     },${nomProvince}`}
                     title="Cliquez pour voir plus de détails des résultats du centre"
+                    key={item.nomCentre}
                   >
                     <Row className="separate">
                       <Col>

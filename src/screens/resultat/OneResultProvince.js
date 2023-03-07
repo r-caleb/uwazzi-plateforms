@@ -1,13 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { Container, Row, Col } from "react-bootstrap";
-import { Link, useNavigate, useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import ResultatProvincial from "../../components/resultatProvincial/ResultatProvincial";
 import "./resultatScreen.scss";
 
 const OneResultProvince = () => {
   const [provinces, setProvince] = useState([]);
   const [candidatResult, setCandidatResult] = useState([]);
   const [candidats, setCandidat] = useState([]);
-  const [provinceResult, setProvinceResult] = useState([]);
   const id = useParams();
   const idCandidat = id.id;
   const fetchData = () => {
@@ -19,12 +19,9 @@ const OneResultProvince = () => {
         setProvince(data.data);
       });
   };
-
-  const idProvinces = provinces.map((province) => parseInt(province.id));
-  console.log(idProvinces);
   const fetchResult = () => {
     fetch(
-      `https://ecoki.net/processus_E_api/api/resultats/candidat_pays?id_candidat=${idCandidat}`
+      `http://de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${idCandidat}`
     )
       .then((response) => {
         return response.json();
@@ -38,7 +35,7 @@ const OneResultProvince = () => {
     fetchData();
     fetchResult();
     fetch(
-      "https://ecoki.net/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
+      "http://de-vie.com/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
     )
       .then((response) => {
         return response.json();
@@ -46,17 +43,7 @@ const OneResultProvince = () => {
       .then((data) => {
         setCandidat(data.data);
       });
-    fetch(
-      `https://ecoki.net/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvinces}`
-    )
-      .then((response) => {
-        return response.json();
-      })
-      .then((data) => {
-        setProvinceResult(data.ResultatProv);
-      });
   }, []);
-  console.log(provinceResult);
   const candidate = candidats.filter(
     (candidat) => candidat.id && candidat.id === idCandidat
   );
@@ -64,15 +51,15 @@ const OneResultProvince = () => {
   return (
     <Container>
       <h3 className="h3">
-        <Link to="/">Accueil</Link> >
-        <Link to="/resultats/data"> Résultats</Link> >
-        <em style={{ color: "#00A2DD" }}> Provinces</em>
+        <Link to="/">Accueil</Link> {`>`}
+        <Link to="/resultats/data"> Résultats</Link> {`>`}
+        <em style={{ color: "#00A2DD" }}> Provinces </em>
       </h3>
       <hr />
       <Row className="card_candidat_result row">
         <Col lg={3} className="pictures">
           <img
-            src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidate[0]?.photoCandidat}`}
+            src={`http://de-vie.com/processus_E_api/web/assets/images/PhotoCandidats/${candidate[0]?.photoCandidat}`}
             alt="avatar"
             className="candidat"
           />
@@ -92,14 +79,12 @@ const OneResultProvince = () => {
         </Col>
         <Col className="tab">
           {provinces?.map((province) => (
-            <Link
-              to={`/center/result/lists/${province.id},${candidate[0]?.id},${province.nom}`}
+            <ResultatProvincial
               key={province.id}
-            >
-              <Row className="data">
-                <Col>{province.nom}</Col>
-              </Row>
-            </Link>
+              province={province}
+              candidate={candidate[0]}
+              idCandidat={idCandidat}
+            />
           ))}
         </Col>
       </Row>
