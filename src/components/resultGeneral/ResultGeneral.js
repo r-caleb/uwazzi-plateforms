@@ -7,7 +7,7 @@ const ResultGeneral = ({ candidat }) => {
 
   useEffect(() => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${candidat.id}`
+      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${candidat.id}`
     )
       .then((response) => {
         return response.json();

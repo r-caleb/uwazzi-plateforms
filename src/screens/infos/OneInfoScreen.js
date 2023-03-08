@@ -76,7 +76,7 @@ const OneInfoScreen = () => {
               <Col>
                 <Card className="bg-dark text-white news__card1">
                   <Card.Img
-                    src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}
+                    src={`http://www.ecoki.net/processus_E_api/web/assets/images/ImageArticle/${info?.image}`}
                     alt="Card image"
                   />
                   <Card.ImgOverlay>

@@ -25,7 +25,7 @@ const CenterScreen = () => {
   };
   useEffect(() => {
     fetchData();
-  }, [input]);
+  }, []);
   const centerProvince = centers.filter(
     (center) => center.province === nomProvince
   );

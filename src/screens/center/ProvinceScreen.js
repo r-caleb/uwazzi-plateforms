@@ -10,7 +10,7 @@ const ProvinceScreen = () => {
   const [input, setInput] = useState("");
 
   const fetchData = () => {
-    fetch("http://de-vie.com/processus_E_api/api/list_province?search=")
+    fetch("http://www.de-vie.com/processus_E_api/api/list_province?search=")
       .then((response) => {
         return response.json();
       })

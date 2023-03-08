@@ -21,7 +21,7 @@ const ResultatScreen = () => {
   };
   useEffect(() => {
     fetchData();
-  }, [candidats]);
+  }, []);
   return (
     <div className="container__resultat">
       <h3>

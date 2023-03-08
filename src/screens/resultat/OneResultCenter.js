@@ -15,7 +15,7 @@ const OneResultCenter = () => {
   let nomProvince = province.province.split(",")[2];
 
   const fetchData = () => {
-    fetch("http://de-vie.com/processus_E_api/api/list_centre?search&id")
+    fetch("http://www.de-vie.com/processus_E_api/api/list_centre?search&id")
       .then((response) => {
         return response.json();
       })
@@ -26,7 +26,7 @@ const OneResultCenter = () => {
   useEffect(() => {
     fetchData();
     fetch(
-      `http://de-vie.com/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvince}`
+      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${idProvince}`
     )
       .then((response) => {
         return response.json();
@@ -34,7 +34,7 @@ const OneResultCenter = () => {
       .then((data) => {
         setProvinceResult(data.ResultatProv);
       });
-  }, [centers]);
+  }, []);
   const centerProvince = centers.filter(
     (center) => center.province === nomProvince
   );

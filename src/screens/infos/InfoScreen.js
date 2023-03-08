@@ -21,7 +21,7 @@ const InfoScreen = () => {
   let url = "https://uwazzi-plateforms.vercel.app/infos/2";
 
   useEffect(() => {
-    fetch(`https://ecoki.net/processus_E_api/api/articles?search=${input}`)
+    fetch(`http://de-vie.com/processus_E_api/api/articles?search=${input}`)
       .then((response) => {
         return response.json();
       })

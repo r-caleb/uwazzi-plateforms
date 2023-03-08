@@ -15,7 +15,7 @@ const OneResultBureau = () => {
 
   const fetchData = () => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
+      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
     )
       .then((response) => {
         return response.json();
@@ -26,7 +26,7 @@ const OneResultBureau = () => {
   };
   const fetchData2 = () => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
+      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
     )
       .then((response) => {
         return response.json();
@@ -43,7 +43,7 @@ const OneResultBureau = () => {
   const bureauxFilter = bureaux2.map((bureau) => {
     return parseInt(bureau.NombreVoix);
   });
-  const bureauxNameFilter = bureaux2.map((bureau) => { 
+  const bureauxNameFilter = bureaux2.map((bureau) => {
     return bureau.NomBureau;
   });
   return (
@@ -56,7 +56,8 @@ const OneResultBureau = () => {
         >
           Centres
         </Link>
-        {`>`}<em style={{ color: "#00A2DD" }}> Bureaux</em>
+        {`>`}
+        <em style={{ color: "#00A2DD" }}> Bureaux</em>
       </h3>
       <hr />
       <Row className="card_candidat_result row">

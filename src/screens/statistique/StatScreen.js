@@ -19,7 +19,7 @@ const StatScreen = () => {
   };
 
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/statistique")
+    fetch("http://www.de-vie.com/processus_E_api/api/statistique")
       .then((response) => {
         return response.json();
       })
@@ -41,11 +41,11 @@ const StatScreen = () => {
   return (
     <div className="stat">
       <Container>
-        <h3 >
+        <h3>
           <Link to="/">Accueil</Link> >
           <em style={{ color: "#00A2DD" }}> Statistiques</em>
         </h3>
-        <hr/>
+        <hr />
         <Row>
           <Col className="total_stat">
             <div className="stat_enrolement">
