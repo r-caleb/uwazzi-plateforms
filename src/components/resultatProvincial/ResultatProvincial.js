@@ -15,7 +15,7 @@ const ResultatProvincial = ({ province, candidate, idCandidat }) => {
       .then((data) => {
         setProvinceResult(data.ResultatProv);
       });
-  }, []);
+  }, [provinceResult]);
   return (
     <Link
       to={`/center/result/lists/${province.id},${idCandidat},${province.nom}`}

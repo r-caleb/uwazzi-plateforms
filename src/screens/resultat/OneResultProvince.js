@@ -43,7 +43,7 @@ const OneResultProvince = () => {
       .then((data) => {
         setCandidat(data.data);
       });
-  }, []);
+  }, [candidats]);
   const candidate = candidats.filter(
     (candidat) => candidat.id && candidat.id === idCandidat
   );
