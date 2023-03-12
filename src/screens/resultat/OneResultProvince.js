@@ -11,7 +11,7 @@ const OneResultProvince = () => {
   const id = useParams();
   const idCandidat = id.id;
   const fetchData = () => {
-    fetch("http://de-vie.com/processus_E_api/api/list_province?search=")
+    fetch("https://de-vie.com/processus_E_api/api/list_province?search=")
       .then((response) => {
         return response.json();
       })
@@ -21,7 +21,7 @@ const OneResultProvince = () => {
   };
   const fetchResult = () => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${idCandidat}`
+      `https://de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${idCandidat}`
     )
       .then((response) => {
         return response.json();
@@ -35,7 +35,7 @@ const OneResultProvince = () => {
     fetchData();
     fetchResult();
     fetch(
-      "http://www.de-vie.com/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
+      "https://www.de-vie.com/processus_E_api/api/list_candidat?filtre=Presidentielle&search="
     )
       .then((response) => {
         return response.json();
@@ -45,9 +45,8 @@ const OneResultProvince = () => {
       });
   }, [candidats]);
   const candidate = candidats.filter(
-    (candidat) => candidat.id && candidat.id === idCandidat
+    (candidat) => candidat.id && candidat.id == idCandidat
   );
-
   return (
     <Container>
       <h3 className="h3">
@@ -59,14 +58,14 @@ const OneResultProvince = () => {
       <Row className="card_candidat_result row">
         <Col lg={3} className="pictures">
           <img
-            src={`http://de-vie.com/processus_E_api/web/assets/images/PhotoCandidats/${candidate[0]?.photoCandidat}`}
+            src={`http://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidate[0]?.photoCandidat}`}
             alt="avatar"
             className="candidat"
           />
           <p>{candidate[0]?.nom}</p>
           <div className="parti_politique">
             <img
-              src={`http://elektion.ecoki.net/web/assets/images/logoParti/${candidate[0]?.logo_parti}`}
+              src={`http://elektion.de-vie.com/web/assets/images/logoParti/${candidate[0]?.logo_parti}`}
               alt="avatar"
               className="parti"
             />

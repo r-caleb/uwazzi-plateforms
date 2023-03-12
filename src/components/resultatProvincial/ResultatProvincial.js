@@ -7,7 +7,7 @@ const ResultatProvincial = ({ province, candidate, idCandidat }) => {
 
   useEffect(() => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${province.id}`
+      `https://de-vie.com/processus_E_api/api/resultats/candidat_province?id_candidat=${idCandidat}&id_province=${province.id}`
     )
       .then((response) => {
         return response.json();

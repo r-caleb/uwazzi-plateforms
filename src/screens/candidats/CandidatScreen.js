@@ -18,7 +18,7 @@ const CandidatScreen = () => {
 
   const fetchData = () => {
     fetch(
-      "http://www.de-vie.com/processus_E_api/api/list_candidat?filtre=Tous&search="
+      "https://www.de-vie.com/processus_E_api/api/list_candidat?filtre=Tous&search="
     )
       .then((response) => {
         return response.json();
@@ -106,7 +106,7 @@ const CandidatScreen = () => {
                 <Row className="data">
                   <Col xs={2}>
                     <img
-                      src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+                      src={`http://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
                       alt="candidat"
                     />
                   </Col>

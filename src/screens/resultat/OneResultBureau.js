@@ -15,7 +15,7 @@ const OneResultBureau = () => {
 
   const fetchData = () => {
     fetch(
-      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
+      `https://www.de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
     )
       .then((response) => {
         return response.json();
@@ -26,7 +26,7 @@ const OneResultBureau = () => {
   };
   const fetchData2 = () => {
     fetch(
-      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
+      `https://www.de-vie.com/processus_E_api/api/resultats/candidat_centre/bureau?id_candidat=${idCandidat}&id_province=${idProvince}&id_centre=${idCenter}`
     )
       .then((response) => {
         return response.json();

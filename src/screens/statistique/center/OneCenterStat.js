@@ -14,7 +14,7 @@ const OneCenterStat = () => {
 
   const fetchData = () => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/list_centre?search=${idCenter}&id`
+      `https://de-vie.com/processus_E_api/api/list_centre?search=${idCenter}&id`
     )
       .then((response) => {
         return response.json();

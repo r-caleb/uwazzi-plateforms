@@ -8,7 +8,7 @@ const ProvinceStat = () => {
   const [totalCentre, setTotalCentre] = useState("0");
 
   const fetchData = () => {
-    fetch("http://de-vie.com/processus_E_api/api/list_province?search=")
+    fetch("https://de-vie.com/processus_E_api/api/list_province?search=")
       .then((response) => {
         return response.json();
       })

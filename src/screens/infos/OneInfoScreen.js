@@ -20,7 +20,7 @@ const OneInfoScreen = () => {
   let url = `https://uwazzi-plateforms.vercel.app/infos/${id.id}`;
 
   const fetchData = () => {
-    fetch("https://ecoki.net/processus_E_api/api/articles?search=")
+    fetch("https://de-vie.com/processus_E_api/api/articles?search=")
       .then((response) => {
         return response.json();
       })
@@ -45,7 +45,7 @@ const OneInfoScreen = () => {
             <hr />
             <p>{news[0]?.date}</p>
             <img
-              src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${news[0]?.image}`}
+              src={`http://elektion.de-vie.com/web/assets/images/ImageArticle/${news[0]?.image}`}
               alt="info_image"
             />
             <br />
@@ -76,7 +76,7 @@ const OneInfoScreen = () => {
               <Col>
                 <Card className="bg-dark text-white news__card1">
                   <Card.Img
-                    src={`http://www.ecoki.net/processus_E_api/web/assets/images/ImageArticle/${info?.image}`}
+                    src={`http://elektion.de-vie.com/web/assets/images/ImageArticle/${info?.image}`}
                     alt="Card image"
                   />
                   <Card.ImgOverlay>

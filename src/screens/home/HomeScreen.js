@@ -22,7 +22,7 @@ const HomeScreen = () => {
   };
 
   const fetchData = () => {
-    fetch("http://www.de-vie.com/processus_E_api/api/articles?search=")
+    fetch("https://www.de-vie.com/processus_E_api/api/articles?search=")
       .then((response) => {
         return response.json();
       })
@@ -74,7 +74,7 @@ const HomeScreen = () => {
         <Row className="home__news">
           <Col lg={5} className="over">
             <img
-              src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${recent?.image}`}
+              src={`http://elektion.de-vie.com/web/assets/images/ImageArticle/${recent?.image}`}
               alt="info"
             />
           </Col>

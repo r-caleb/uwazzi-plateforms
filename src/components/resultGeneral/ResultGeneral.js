@@ -7,7 +7,7 @@ const ResultGeneral = ({ candidat }) => {
 
   useEffect(() => {
     fetch(
-      `http://www.de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${candidat.id}`
+      `https://www.de-vie.com/processus_E_api/api/resultats/candidat_pays?id_candidat=${candidat.id}`
     )
       .then((response) => {
         return response.json();
@@ -21,7 +21,7 @@ const ResultGeneral = ({ candidat }) => {
       <Row className="data">
         <Col xs={2}>
           <img
-            src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+            src={`http://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
             alt="candidat"
           />
         </Col>

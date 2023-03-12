@@ -9,7 +9,7 @@ const StatScreen = () => {
   const [province, setProvince] = useState([]);
   let arr = [];
   const fetchCenterNumber = () => {
-    fetch("http://de-vie.com/processus_E_api/api/list_province?search=")
+    fetch("https://de-vie.com/processus_E_api/api/list_province?search=")
       .then((response) => {
         return response.json();
       })
@@ -19,7 +19,7 @@ const StatScreen = () => {
   };
 
   const fetchData = () => {
-    fetch("http://www.de-vie.com/processus_E_api/api/statistique")
+    fetch("https://www.de-vie.com/processus_E_api/api/statistique")
       .then((response) => {
         return response.json();
       })

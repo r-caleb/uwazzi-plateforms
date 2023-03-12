@@ -14,7 +14,7 @@ const CenterScreen = () => {
   let nomProvince = province.province;
   const fetchData = () => {
     fetch(
-      `http://de-vie.com/processus_E_api/api/list_centre?search=${input}&id`
+      `https://de-vie.com/processus_E_api/api/list_centre?search=${input}&id`
     )
       .then((response) => {
         return response.json();

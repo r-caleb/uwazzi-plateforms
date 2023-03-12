@@ -16,7 +16,7 @@ const OneCandidatScreen = () => {
 
   useEffect(() => {
     fetch(
-      `http://www.de-vie.com/processus_E_api/api/list_candidat?filtre=Tous&search=${candidate}`
+      `https://www.de-vie.com/processus_E_api/api/list_candidat?filtre=Tous&search=${candidate}`
     )
       .then((response) => {
         return response.json();
@@ -34,14 +34,14 @@ const OneCandidatScreen = () => {
       <Row className="card_candidat row">
         <Col lg={4} className="pictures">
           <img
-            src={`http://elektion.ecoki.net/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+            src={`http://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
             alt="candidat"
             className="candidat"
           />
           <p className="name">{candidat.nom}</p>
           <div className="parti_politique">
             <img
-              src={`http://elektion.ecoki.net/web/assets/images/logoParti/${candidat.logo_parti}`}
+              src={`http://elektion.de-vie.com/web/assets/images/logoParti/${candidat.logo_parti}`}
               alt="parti_politique"
               className="parti"
             />

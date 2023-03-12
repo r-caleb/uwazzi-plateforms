@@ -21,7 +21,7 @@ const InfoScreen = () => {
   let url = "https://uwazzi-plateforms.vercel.app/infos/2";
 
   useEffect(() => {
-    fetch(`http://de-vie.com/processus_E_api/api/articles?search=${input}`)
+    fetch(`https://de-vie.com/processus_E_api/api/articles?search=${input}`)
       .then((response) => {
         return response.json();
       })
@@ -75,7 +75,7 @@ const InfoScreen = () => {
             <Col>
               <Card className="bg-dark text-white news__card">
                 <Card.Img
-                  src={`http://elektion.ecoki.net/web/assets/images/ImageArticle/${info?.image}`}
+                  src={`http://elektion.de-vie.com/web/assets/images/ImageArticle/${info?.image}`}
                   alt="image du news"
                 />
                 <Card.ImgOverlay>
