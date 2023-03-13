@@ -29,9 +29,23 @@ const Layout = ({ children }) => {
       <Header handleToggleSidebar={handleToggleSidebar} />
       <div className="app_container">
         <SideBar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
-        <Container fluid className="app__main ">
+        <div fluid className="app_main ">
           {children}
-        </Container>
+        </div>
+      </div>
+    </>
+  );
+};
+const LayoutAccueil = ({ children }) => {
+  const [sidebar, toggleSidebar] = useState(false);
+  const handleToggleSidebar = () => toggleSidebar((value) => !value);
+  return (
+    <>
+      <Header handleToggleSidebar={handleToggleSidebar} />
+      <div className="app_container">
+        <div fluid className="app__main ">
+          {children}
+        </div>
       </div>
     </>
   );
@@ -43,9 +57,9 @@ function App() {
       <Route
         path="/"
         element={
-          <Layout>
+          <LayoutAccueil>
             <HomeScreen />
-          </Layout>
+          </LayoutAccueil>
         }
       />
       <Route

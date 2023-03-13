@@ -23,17 +23,17 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
       className={sidebar ? "sidebar open" : "sidebar"}
       onClick={() => handleToggleSidebar(false)}
     >
-      <h2> MENUS</h2>
+      <h2>MENUS</h2>
       <hr />
       <NavLink
         to="/"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
         end
       >
-        <li>
+        {/* <li>
           <MdHome size={23} />
           <span>Accueil</span>
-        </li>
+        </li> */}
       </NavLink>
       <NavLink
         to="/candidat/lists"
@@ -71,7 +71,7 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
           <span>Statistiques</span>
         </li>
       </NavLink>
-      <NavLink
+      {/* <NavLink
         to="/resultats/data"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
@@ -79,7 +79,7 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
           <FaCalculator size={23} />
           <span>Résultats</span>
         </li>
-      </NavLink>
+      </NavLink> */}
       <NavLink
         to="/infos"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
