@@ -8,6 +8,7 @@ import {
   FaCalculator,
   FaInfoCircle,
   FaChartBar,
+  FaFileContract
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -87,6 +88,16 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
         <li>
           <FaInfoCircle size={23} />
           <span>Soyez Informé</span>
+        </li>
+      </NavLink>
+
+      <NavLink
+        to="/TextesLegaux"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <FaFileContract size={23} />
+          <span>Textes Légaux</span>
         </li>
       </NavLink>
       <hr />
