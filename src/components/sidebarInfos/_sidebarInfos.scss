@@ -1,0 +1,119 @@
+@import "../../index.scss";
+
+.sidebarInfos {
+  background: $secondary-color;
+  display: flex;
+  flex-direction: column;
+
+  width: 300px;
+  height: 90vh;
+  padding-top: 1rem;
+  transition: transform 0.2s ease-in;
+  position: sticky;
+  top: 10vh;
+  left: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+  scrollbar-width: none;
+
+  h2 {
+    padding: 1rem 1.5rem 0rem;
+    font-size: 14px;
+  }
+  li {
+    display: flex;
+    align-items: center;
+    list-style-type: none;
+  }
+  a {
+    padding: 0.6rem 1.5rem;
+    margin: 0rem 0.7rem;
+    cursor: pointer;
+    color: $text-color;
+    text-decoration: none;
+
+    span {
+      margin-left: 1rem;
+      font-size: 14px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+    }
+
+    &:hover {
+      background-color: $primary-color;
+      padding: 0.6rem 1.5rem;
+      border-radius: 20px;
+      color: $text-color;
+      text-decoration: none;
+    }
+    img {
+      width: 40px;
+    }
+  }
+
+  hr {
+    background-color: $primary-color;
+    margin: 0.5rem;
+  }
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: $breakpoint-medium) {
+  .sidebar {
+    /*       overflow-x: hidden;
+ */
+    width: 100px;
+    li {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    /*    span {
+         display: none;
+      } */
+    a {
+      padding: 0.6rem 2.55rem;
+      margin: 0rem 0.7rem;
+      cursor: pointer;
+      color: $text-color;
+      text-decoration: none;
+
+      span {
+        margin-left: 0rem !important;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}
+@media (max-width: $breakpoint-small) {
+  .sidebar {
+    transform: translateX(-100%);
+    position: fixed;
+    z-index: 999;
+    a {
+      padding: 0.6rem 2.55rem;
+      margin: 0rem 0.7rem;
+      cursor: pointer;
+      color: $text-color;
+      text-decoration: none;
+
+      span {
+        margin-left: 0rem !important;
+        text-align: center;
+        font-size: 14px;
+        font-weight: 500;
+        letter-spacing: 0.4px;
+      }
+    }
+  }
+}

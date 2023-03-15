@@ -59,8 +59,8 @@ const CenterScreen = () => {
       <Row>
         <Col xs={9} md={7}>
           <h3>
-            <Link to="/">Accueil</Link> >
-            <Link to="/province/lists"> Provinces </Link> >
+            <Link to="/">Accueil</Link> {'>'}
+            <Link to="/province/lists"> Provinces </Link> {'>'}
             <em style={{ color: "#00A2DD" }}> Centres</em>
           </h3>
         </Col>

@@ -20,6 +20,10 @@ import OneCenterStat from "./screens/statistique/center/OneCenterStat";
 import OneResultProvince from "./screens/resultat/OneResultProvince";
 import OneResultCenter from "./screens/resultat/OneResultCenter";
 import OneResultBureau from "./screens/resultat/OneResultBureau";
+import SideBarInfos from "./components/sidebarInfos/SideBarInfos";
+import TextesLegaux from "./screens/textes/TextesLegaux";
+import Campagnes from "./screens/campagne/Campagnes";
+import OneTextes from "./screens/textes/OneTextes";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -29,6 +33,24 @@ const Layout = ({ children }) => {
       <Header handleToggleSidebar={handleToggleSidebar} />
       <div className="app_container">
         <SideBar sidebar={sidebar} handleToggleSidebar={handleToggleSidebar} />
+        <div fluid className="app_main ">
+          {children}
+        </div>
+      </div>
+    </>
+  );
+};
+const LayoutInfos = ({ children }) => {
+  const [sidebar, toggleSidebar] = useState(false);
+  const handleToggleSidebar = () => toggleSidebar((value) => !value);
+  return (
+    <>
+      <Header handleToggleSidebar={handleToggleSidebar} />
+      <div className="app_container">
+        <SideBarInfos
+          sidebar={sidebar}
+          handleToggleSidebar={handleToggleSidebar}
+        />
         <div fluid className="app_main ">
           {children}
         </div>
@@ -137,17 +159,41 @@ function App() {
       <Route
         path="/infos"
         element={
-          <Layout>
+          <LayoutInfos>
             <InfoScreen />
-          </Layout>
+          </LayoutInfos>
+        }
+      />
+      <Route
+        path="/info/textes"
+        element={
+          <LayoutInfos>
+            <TextesLegaux />
+          </LayoutInfos>
+        }
+      />
+      <Route
+        path="/info/campagne&vote"
+        element={
+          <LayoutInfos>
+            <Campagnes />
+          </LayoutInfos>
         }
       />
       <Route
         path="/infos/:id"
         element={
-          <Layout>
+          <LayoutInfos>
             <OneInfoScreen />
-          </Layout>
+          </LayoutInfos>
+        }
+      />
+      <Route
+        path="/info/textes/:nom"
+        element={
+          <LayoutInfos>
+            <OneTextes />
+          </LayoutInfos>
         }
       />
       <Route

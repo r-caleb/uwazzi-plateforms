@@ -32,12 +32,13 @@ const InfoScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+
   return (
     <Container className="news">
       <Row>
         <Col xs={7} md={7}>
           <h3>
-            <Link to="/">Accueil</Link> >
+            <Link to="/">Accueil</Link> {`>`}
             <em style={{ color: "#00A2DD" }}> Actualités</em>
           </h3>
         </Col>

@@ -82,7 +82,7 @@ const Header = ({ handleToggleSidebar }) => {
                   <Nav.Link href="/candidat/lists">
                     Candidats & Centres
                   </Nav.Link>
-                  <Nav.Link href="#action3">Informations</Nav.Link>
+                  <Nav.Link href="/infos">Informations</Nav.Link>
                   <Nav.Link>
                     {/* <FaLanguage size={40} /> */}
                     {/*  <FormControl sx={{ m: 1, minWidth: 100 }}>

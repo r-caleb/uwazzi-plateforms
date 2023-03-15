@@ -80,35 +80,7 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
           <span>Résultats</span>
         </li>
       </NavLink> */}
-      <NavLink
-        to="/infos"
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-      >
-        <li>
-          <FaInfoCircle size={23} />
-          <span>Soyez Informé</span>
-        </li>
-      </NavLink>
       <hr />
-      {/*  <h2 className="org"> ORGANISATION</h2>
-      <NavLink
-        to="/feed/like"
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-      >
-        <li>
-          <img src={ceni} alt="logo ceni" />
-          <span>CENI RDC</span>
-        </li>
-      </NavLink>
-      <NavLink
-        to="/feed/like"
-        style={({ isActive }) => (isActive ? activeStyle : undefined)}
-      >
-        <li>
-          <img src={interniews} alt="logo interniews" />
-          <span>Interniews</span>
-        </li>
-      </NavLink> */}
     </nav>
   );
 };
