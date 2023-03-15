@@ -17,7 +17,7 @@ const OneTextes = () => {
         setTextes(data);
       });
   };
-
+  //
   useEffect(() => {
     fetchData();
   }, []);
@@ -53,7 +53,7 @@ const OneTextes = () => {
       <br />
       <br />
       {textesFilter?.map((texte) => (
-        <Accordion  key={texte.id}>
+        <Accordion key={texte.id}>
           <Accordion.Item eventKey="0">
             <Accordion.Header>{texte?.nomarticle}</Accordion.Header>
             <Accordion.Body
