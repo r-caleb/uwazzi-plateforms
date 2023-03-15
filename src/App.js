@@ -20,10 +20,14 @@ import OneCenterStat from "./screens/statistique/center/OneCenterStat";
 import OneResultProvince from "./screens/resultat/OneResultProvince";
 import OneResultCenter from "./screens/resultat/OneResultCenter";
 import OneResultBureau from "./screens/resultat/OneResultBureau";
+<<<<<<< HEAD
 import SideBarInfos from "./components/sidebarInfos/SideBarInfos";
 import TextesLegaux from "./screens/textes/TextesLegaux";
 import Campagnes from "./screens/campagne/Campagnes";
 import OneTextes from "./screens/textes/OneTextes";
+=======
+import TextesScreen from "./screens/TextesLegaux/TextesLegauxScreen";
+>>>>>>> acb17770470bac27356b716d4fe6b13615582592
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -225,6 +229,14 @@ function App() {
         element={
           <Layout>
             <OneResultBureau />
+          </Layout>
+        }
+      />
+        <Route
+        path="/TextesLegaux"
+        element={
+          <Layout>
+            <TextesScreen/>
           </Layout>
         }
       />

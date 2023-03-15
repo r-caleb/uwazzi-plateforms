@@ -8,6 +8,7 @@ import {
   FaCalculator,
   FaInfoCircle,
   FaChartBar,
+  FaFileContract
 } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
@@ -79,6 +80,48 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
           <FaCalculator size={23} />
           <span>Résultats</span>
         </li>
+<<<<<<< HEAD
+=======
+      </NavLink>
+      <NavLink
+        to="/infos"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <FaInfoCircle size={23} />
+          <span>Soyez Informé</span>
+        </li>
+      </NavLink>
+
+      <NavLink
+        to="/TextesLegaux"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <FaFileContract size={23} />
+          <span>Textes Légaux</span>
+        </li>
+      </NavLink>
+      <hr />
+      {/*  <h2 className="org"> ORGANISATION</h2>
+      <NavLink
+        to="/feed/like"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <img src={ceni} alt="logo ceni" />
+          <span>CENI RDC</span>
+        </li>
+      </NavLink>
+      <NavLink
+        to="/feed/like"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <img src={interniews} alt="logo interniews" />
+          <span>Interniews</span>
+        </li>
+>>>>>>> acb17770470bac27356b716d4fe6b13615582592
       </NavLink> */}
       <hr />
     </nav>
