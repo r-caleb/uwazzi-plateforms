@@ -17,7 +17,7 @@ const Campagnes = () => {
         return response.json();
       })
       .then((data) => {
-        setTextes(data.data);
+        setTextes(data);
       });
   }, []);
 
