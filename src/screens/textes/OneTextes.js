@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import justices from "./justices.png";
-import { Accordion, Button } from "react-bootstrap";
+import { BiDownload } from "react-icons/bi";
 import "./textes.scss";
+import { Accordion, Button } from "react-bootstrap";
 
 const OneTextes = () => {
   const [textes, setTextes] = useState([]);
@@ -47,16 +48,16 @@ const OneTextes = () => {
         height={"auto"}
       />
       <h1>{textesLegauxFilter[0]?.nom}</h1>
-      <Button variant="primary" size="sm">
-        Télécharger
+      <Button size="sm" className="download">
+        <BiDownload size={18} /> Télécharger
       </Button>{" "}
       <br />
       <br />
       {textesFilter?.map((texte) => (
-        <Accordion key={texte.id}>
+        <Accordion key={texte.id} flush>
           <Accordion.Item eventKey="0">
             <Accordion.Header>{texte?.nomarticle}</Accordion.Header>
-            <Accordion.Body
+            <Accordion.Body className="accord"
               dangerouslySetInnerHTML={{ __html: texte?.titre }}
             />
           </Accordion.Item>

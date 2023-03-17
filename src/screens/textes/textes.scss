@@ -179,8 +179,13 @@
   align-items: center;
   margin: auto;
 }
+.download {
+  background-color: $blue-color;
+}
+.accord p {
+  padding-top: 3rem;
+}
 h1 {
- 
   font-weight: 500;
   font-size: 25px !important;
   display: table;

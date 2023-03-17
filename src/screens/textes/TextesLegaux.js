@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Container } from "react-bootstrap";
-import "./textes.scss";
 import justices from "./justices.png";
 import texte from "./justice.png";
 import { Link } from "react-router-dom";
 import { AiOutlineSearch } from "react-icons/ai";
+import "./textes.scss";
 
 const TextesLegaux = () => {
   const [textes, setTextes] = useState([]);
@@ -37,6 +37,7 @@ const TextesLegaux = () => {
     return Object.values(outputs);
   };
   const textesLegaux = groupObjectByField(textes, "nom");
+
   return (
     <Container className="textes">
       <Row>
@@ -50,7 +51,7 @@ const TextesLegaux = () => {
           <form onSubmit={handleSubmit}>
             <input
               type="text"
-              placeholder="Chercher un article"
+              placeholder="Rechercher un texte"
               value={input}
               onChange={(e) => setInput(e.target.value)}
             />
@@ -61,6 +62,7 @@ const TextesLegaux = () => {
         </Col>
       </Row>
       <hr />
+      <h1>TEXTES LÉGAUX ÉLECTORAUX</h1>
       <img
         src={justices}
         alt="Textes Legaux"
@@ -68,20 +70,26 @@ const TextesLegaux = () => {
         width={500}
         height={"auto"}
       />
-      <h1>TEXTES LÉGAUX ÉLECTORAUX</h1>
       <Row className="g-4 my-3">
-        {textesLegaux.map((text) => (
-          <Col md={3} className="textes__design m-4" key={text.id}>
-            <Link to={`/info/textes/${text?.nom}`}>
-              <div className="card_texte">
-                <h5>Textes Légaux</h5>
-                <img src={texte} alt="totem" />
-                <p className="line"></p>
-                <p>{text.nom}</p>
-              </div>
-            </Link>
-          </Col>
-        ))}
+        {textesLegaux &&
+          textesLegaux
+            .filter((value) =>
+              input
+                ? value.nom.toLowerCase().includes(input.toLowerCase())
+                : true
+            )
+            .map((text) => (
+              <Col md={3} className="textes__design m-4" key={text.id}>
+                <Link to={`/info/textes/${text?.nom}`}>
+                  <div className="card_texte">
+                    <h5>Textes Légaux</h5>
+                    <img src={texte} alt="totem" />
+                    <p className="line"></p>
+                    <p>{text.nom}</p>
+                  </div>
+                </Link>
+              </Col>
+            ))}
       </Row>
     </Container>
   );

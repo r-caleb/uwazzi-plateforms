@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Row, Col, Card, Container } from "react-bootstrap";
 import "./infoScreen.scss";
-import ceni from "./ceni.png";
+import flag from "./flag.png";
 import { Link } from "react-router-dom";
 import {
   FacebookShareButton,
@@ -59,7 +59,7 @@ const InfoScreen = () => {
       <hr />
       <Row className="news__banner">
         <Col md={4}>
-          <img src={ceni} alt="logo" />
+          <img src={flag} alt="logo" />
         </Col>
         <Col>
           <p>
@@ -71,7 +71,7 @@ const InfoScreen = () => {
       </Row>
 
       <Row xs={1} md={3} className="g-4">
-        {infos.map((info) => (
+        {infos?.map((info) => (
           <Link to={`/infos/${info.id}`} key={info.id}>
             <Col>
               <Card className="bg-dark text-white news__card">

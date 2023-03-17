@@ -45,7 +45,7 @@ const CandidatScreen = () => {
       <Row>
         <Col xs={7} md={7}>
           <h3>
-            <Link to="/">Accueil</Link> >
+            <Link to="/">Accueil</Link> {`>`}
             <em style={{ color: "#00A2DD" }}> Candidats</em>
           </h3>
         </Col>

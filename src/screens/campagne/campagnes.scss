@@ -19,6 +19,7 @@
       }
     }
   }
+
   &__banner {
     background-color: $blue-color;
     width: 65%;
@@ -30,7 +31,8 @@
     opacity: 0.7;
     box-shadow: 0px 0px 10px 10px rgba(50, 50, 230, 0.185);
 
-    img {
+    .image {
+      align-self: center;
       width: 150px;
       height: 150px;
       opacity: 1;
@@ -51,7 +53,7 @@
       border: 1px solid #dcdcdc;
       font-weight: 500;
       background: $secondary-color;
-      padding: 0.3rem;
+      padding: 0.8rem;
       color: $text-color;
       font-size: 16px;
       border-radius: 10px 0px 0px 10px;
