@@ -23,6 +23,7 @@ import SideBarInfos from "./components/sidebarInfos/SideBarInfos";
 import TextesLegaux from "./screens/textes/TextesLegaux";
 import Campagnes from "./screens/campagne/Campagnes";
 import OneTextes from "./screens/textes/OneTextes";
+import CalenderScreen from "./screens/calendrier/CalenderScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -167,7 +168,15 @@ function App() {
         path="/info/textes"
         element={
           <LayoutInfos>
-            <TextesLegaux />
+            <TextesLegaux /> 
+          </LayoutInfos>
+        }
+      />
+       <Route
+        path="/info/calendrier"
+        element={
+          <LayoutInfos>
+            <CalenderScreen /> 
           </LayoutInfos>
         }
       />

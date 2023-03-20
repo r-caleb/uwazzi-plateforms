@@ -6,6 +6,7 @@ import {
   FaCity,
   FaMapMarkerAlt,
   FaCalculator,
+  FaCalendar,
   FaInfoCircle,
   FaFileContract,
 } from "react-icons/fa";
@@ -58,7 +59,7 @@ const SideBarInfos = ({ sidebar, handleToggleSidebar }) => {
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         <li>
-          <FaInfoCircle size={23} />
+          <FaCalendar size={23} />
           <span>Calendrier éléctoral</span>
         </li>
       </NavLink>
