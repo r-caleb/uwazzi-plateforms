@@ -14,6 +14,7 @@ import {
   FacebookMessengerIcon,
 } from "react-share";
 import { AiOutlineSearch } from "react-icons/ai";
+import moment from "moment/min/moment-with-locales";
 
 const InfoScreen = () => {
   const [infos, setInfo] = useState([]);
@@ -32,6 +33,7 @@ const InfoScreen = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
   };
+  moment.locale("fr");
 
   return (
     <Container className="news">
@@ -84,8 +86,8 @@ const InfoScreen = () => {
                     <Card.Title className="title__news">
                       {info.titre}
                     </Card.Title>
-                    <Card.Text style={{ textDecoration: "underline" }}>
-                      {info.date}
+                    <Card.Text >
+                      {moment(info.date).fromNow()}
                     </Card.Text>
                     <div className="social_link">
                       <p>Partagez sur :</p>

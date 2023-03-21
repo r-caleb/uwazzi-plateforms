@@ -13,6 +13,7 @@ import {
   FacebookMessengerShareButton,
   FacebookMessengerIcon,
 } from "react-share";
+import moment from "moment/min/moment-with-locales";
 
 const OneInfoScreen = () => {
   const [infos, setInfo] = useState([]);
@@ -33,6 +34,7 @@ const OneInfoScreen = () => {
     fetchData();
   }, []);
   const news = infos.filter((info) => info && info.id == id.id);
+  moment.locale("fr");
 
   return (
     <Container className="news">

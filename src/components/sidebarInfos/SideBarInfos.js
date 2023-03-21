@@ -1,14 +1,7 @@
 import React from "react";
 import "./_sidebarInfos.scss";
 import { MdHome } from "react-icons/md";
-import {
-  FaUsers,
-  FaCity,
-  FaMapMarkerAlt,
-  FaCalculator,
-  FaInfoCircle,
-  FaFileContract,
-} from "react-icons/fa";
+import { FaCalendar, FaInfoCircle, FaFileContract } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
 
 const SideBarInfos = ({ sidebar, handleToggleSidebar }) => {
@@ -40,7 +33,7 @@ const SideBarInfos = ({ sidebar, handleToggleSidebar }) => {
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         <li>
-        <FaFileContract size={23} />
+          <FaFileContract size={23} />
           <span>Textes légaux</span>
         </li>
       </NavLink>
@@ -58,7 +51,7 @@ const SideBarInfos = ({ sidebar, handleToggleSidebar }) => {
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
         <li>
-          <FaInfoCircle size={23} />
+          <FaCalendar size={23} />
           <span>Calendrier éléctoral</span>
         </li>
       </NavLink>
