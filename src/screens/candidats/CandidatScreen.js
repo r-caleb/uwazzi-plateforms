@@ -29,7 +29,7 @@ const CandidatScreen = () => {
   };
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [candidats]);
   const handleClick = (value) => {
     setActiveElement(value);
   };

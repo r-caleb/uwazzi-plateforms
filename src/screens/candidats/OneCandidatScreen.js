@@ -21,7 +21,7 @@ import {
   // MDBIcon,
   // MDBListGroup,
   // MDBListGroupItem
-} from 'mdb-react-ui-kit';
+} from "mdb-react-ui-kit";
 
 const OneCandidatScreen = () => {
   const [candidat, setCandidat] = useState([]);
@@ -42,7 +42,8 @@ const OneCandidatScreen = () => {
       .then((data) => {
         setCandidat(data.data[0]);
       });
-  }, [candidate]);
+  }, []);
+  console.log(candidat);
   return (
     <>
       <div className="back">
@@ -50,47 +51,48 @@ const OneCandidatScreen = () => {
         <span onClick={handleClick}>Retour sur la liste des candidats</span>
       </div>
 
-      <section style={{ backgroundColor: '#eee' }}>
-      <MDBContainer className="py-5">
+      <section style={{ backgroundColor: "#eee" }}>
+        <MDBContainer className="py-5">
+          <MDBRow>
+            <MDBCol lg="4">
+              <MDBCard className="mb-4">
+                <MDBCardBody className="text-center">
+                  <MDBCardImage
+                    src={`http://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
+                    alt="candidat"
+                    className="rounded-circle"
+                    style={{
+                      width: "130px",
+                      height: "130px",
+                      borderRadius: "50%",
+                      objectFit: "cover",
+                      marginBottom: "0.5rem",
+                    }}
+                    fluid
+                  />
+                  <p className="text-muted mb-1 name">{candidat.nom}</p>
+                  <p className="text-muted mb-4">
+                    {candidat.parti_politique}
+                    <img
+                      src={`http://elektion.de-vie.com/web/assets/images/logoParti/${candidat.logo_parti}`}
+                      alt="parti_politique"
+                      className="parti"
+                      style={{
+                        width: "40px",
+                        height: "40px",
+                        objectFit: "cover",
+                        padding: "5px",
+                      }}
+                    />
+                  </p>
 
-        <MDBRow>
-          <MDBCol lg="4">
-            <MDBCard className="mb-4">
-              <MDBCardBody className="text-center">
-                <MDBCardImage
-                  src={`http://elektion.de-vie.com/web/assets/images/PhotoCandidats/${candidat.photoCandidat}`}
-                  alt="candidat"
-                  className="rounded-circle"
-                  style={{ 
-                    width: '130px', 
-                    height: '130px', 
-                    borderRadius : '50%',
-                    objectFit: 'cover',
-                    marginBottom: '0.5rem'
-                  }}
-                  fluid />
-                <p className="text-muted mb-1 name">{candidat.nom}</p>
-                <p className="text-muted mb-4">{candidat.parti_politique}
-                <img
-              src={`http://elektion.de-vie.com/web/assets/images/logoParti/${candidat.logo_parti}`}
-              alt="parti_politique"
-              className="parti"
-              style={{
-                width: '40px',
-                height: '40px',
-                objectFit: 'cover',
-                padding: '5px'
-              }}
-            />
-                </p>
-           
-                <div className="d-flex justify-content-center mb-2">
-                <p className="text-muted mb-1">{candidat.scrutin}</p>
-                </div>
-              </MDBCardBody>
-            </MDBCard>
+                  <div className="d-flex justify-content-center mb-2">
+                    <p className="text-muted mb-1">{candidat.scrutin}</p>
+                  </div>
+                </MDBCardBody>
+              </MDBCard>
 
-            {/* <MDBCard className="mb-4 mb-lg-0">
+              {/* <MDBCard className="mb-4 mb-lg-0">
               <MDBCardBody className="p-0">
                 <MDBListGroup flush className="rounded-3">
                   <MDBListGroupItem className="d-flex justify-content-between align-items-center p-3">
@@ -116,109 +118,192 @@ const OneCandidatScreen = () => {
                 </MDBListGroup>
               </MDBCardBody>
             </MDBCard> */}
-          </MDBCol>
-          <MDBCol lg="8">
-            <MDBCard className="mb-4">
-              <MDBCardBody>
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Numero</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{candidat.numeroCandidat}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Sexe</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{candidat.sexe}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Circonscription</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{candidat.circonscription}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Province</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{candidat.province}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-                <hr />
-                <MDBRow>
-                  <MDBCol sm="3">
-                    <MDBCardText>Fondateur du parti</MDBCardText>
-                  </MDBCol>
-                  <MDBCol sm="9">
-                    <MDBCardText className="text-muted">{candidat.fondateur_parti}</MDBCardText>
-                  </MDBCol>
-                </MDBRow>
-              </MDBCardBody>
-            </MDBCard>
+            </MDBCol>
+            <MDBCol lg="8">
+              <MDBCard className="mb-4">
+                <MDBCardBody>
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Numero</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {candidat.numeroCandidat}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Sexe</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {candidat.sexe}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Circonscription</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {candidat.circonscription}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Province</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {candidat.province}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                  <hr />
+                  <MDBRow>
+                    <MDBCol sm="3">
+                      <MDBCardText>Fondateur du parti</MDBCardText>
+                    </MDBCol>
+                    <MDBCol sm="9">
+                      <MDBCardText className="text-muted">
+                        {candidat.fondateur_parti}
+                      </MDBCardText>
+                    </MDBCol>
+                  </MDBRow>
+                </MDBCardBody>
+              </MDBCard>
 
-            <MDBRow>
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Études</span></MDBCardText>
-                    <MDBCardText className="mb-4"> Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</MDBCardText>
+              <MDBRow>
+                <MDBCol md="6">
+                  <MDBCard className="mb-4 mb-md-0">
+                    <MDBCardBody>
+                      <MDBCardText className="mb-4">
+                        <span className="text-primary font-italic me-1">
+                          Études et Formations
+                        </span>
+                      </MDBCardText>
+                      <MDBCardText
+                        className="mb-4"
+                        dangerouslySetInnerHTML={{
+                          __html: candidat.Experience,
+                        }}
+                      />
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
 
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol> 
+                <MDBCol md="6">
+                  <MDBCard className="mb-4 mb-md-0">
+                    <MDBCardBody>
+                      <MDBCardText className="mb-4">
+                        <span className="text-primary font-italic me-1">
+                          Formations
+                        </span>{" "}
+                      </MDBCardText>
+                      <MDBCardText className="mb-4">
+                        {" "}
+                        Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem
+                        ipsumLorem ipsumLorem ipsum
+                      </MDBCardText>
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
+              </MDBRow>
+              <br />
 
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Formations</span> </MDBCardText>
-                    <MDBCardText className="mb-4"> Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</MDBCardText>
+              <MDBRow>
+                <MDBCol md="6">
+                  <MDBCard className="mb-4 mb-md-0">
+                    <MDBCardBody>
+                      <MDBCardText className="mb-4">
+                        <span className="text-primary font-italic me-1">
+                          Éxperiences professionnelles
+                        </span>
+                      </MDBCardText>
+                      <MDBCardText
+                        className="mb-4"
+                        dangerouslySetInnerHTML={{
+                          __html: candidat.Experience,
+                        }}
+                      />
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
 
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBRow>
-            <br/> 
+                <MDBCol md="6">
+                  <MDBCard className="mb-4 mb-md-0">
+                    <MDBCardBody>
+                      <MDBCardText className="mb-4">
+                        <span className="text-primary font-italic me-1">
+                          Compétences
+                        </span>{" "}
+                      </MDBCardText>
+                      <MDBCardText className="mb-4">
+                        {" "}
+                        <MDBCardText
+                          className="mb-4"
+                          dangerouslySetInnerHTML={{
+                            __html: candidat.Experience,
+                          }}
+                        />
+                      </MDBCardText>
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
+              </MDBRow>
+              <br />
 
-            <MDBRow>
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Éxperiences professionnelles</span></MDBCardText>
-                    <MDBCardText className="mb-4"> Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</MDBCardText>
+              <MDBRow>
+                <MDBCol md="6">
+                  <MDBCard className="mb-4 mb-md-0">
+                    <MDBCardBody>
+                      <MDBCardText className="mb-4">
+                        <span className="text-primary font-italic me-1">
+                          Langues
+                        </span>
+                      </MDBCardText>
+                      <MDBCardText
+                        className="mb-4"
+                        dangerouslySetInnerHTML={{
+                          __html: candidat.langues,
+                        }}
+                      />
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
 
-                   
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-
-
-              <MDBCol md="6">
-                <MDBCard className="mb-4 mb-md-0">
-                  <MDBCardBody>
-                    <MDBCardText className="mb-4"><span className="text-primary font-italic me-1">Compétences</span> </MDBCardText>
-                    <MDBCardText className="mb-4"> Lorem ipsum Lorem ipsum Lorem ipsumLorem ipsumLorem ipsumLorem ipsumLorem ipsum</MDBCardText>
-
-                  </MDBCardBody>
-                </MDBCard>
-              </MDBCol>
-            </MDBRow>
-
-          </MDBCol>
-        </MDBRow>
-      </MDBContainer>
-    </section>
-    </> 
+                <MDBCol md="6">
+                  <MDBCard className="mb-4 mb-md-0">
+                    <MDBCardBody>
+                      <MDBCardText className="mb-4">
+                        <span className="text-primary font-italic me-1">
+                        Centre d'interet
+                        </span>{" "}
+                      </MDBCardText>
+                      <MDBCardText className="mb-4">
+                        {" "}
+                        <MDBCardText
+                          className="mb-4"
+                          dangerouslySetInnerHTML={{
+                            __html: candidat.centreInteret,
+                          }}
+                        />
+                      </MDBCardText>
+                    </MDBCardBody>
+                  </MDBCard>
+                </MDBCol>
+              </MDBRow>
+            </MDBCol>
+          </MDBRow>
+        </MDBContainer>
+      </section>
+    </>
   );
 };
 export default OneCandidatScreen;
