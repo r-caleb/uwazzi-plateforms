@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React, { useEffect, useState } from "react";
 import "./candidatScreen.scss";
 // import { Container, Row, Col, Table } from "react-bootstrap";
@@ -307,3 +308,5 @@ const OneCandidatScreen = () => {
   );
 };
 export default OneCandidatScreen;
+=======
+>>>>>>> feature_partiPolitique

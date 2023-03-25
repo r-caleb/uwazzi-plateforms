@@ -24,6 +24,7 @@ import TextesLegaux from "./screens/textes/TextesLegaux";
 import Campagnes from "./screens/campagne/Campagnes";
 import OneTextes from "./screens/textes/OneTextes";
 import CalendarScreen from "./screens/calendrier/CalendarScreen";
+import PartiPolitiqueScreen from "./screens/partiPolitique/PartiPolitiqueScreen";
 
 const Layout = ({ children }) => {
   const [sidebar, toggleSidebar] = useState(false);
@@ -165,6 +166,14 @@ function App() {
         }
       />
       <Route
+       path="/partiPolitique"
+       element={
+         <LayoutInfos>
+           <PartiPolitiqueScreen />
+         </LayoutInfos>
+       }
+     />
+     <Route
         path="/info/textes"
         element={
           <LayoutInfos>

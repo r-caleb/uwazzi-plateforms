@@ -46,6 +46,15 @@ const SideBar = ({ sidebar, handleToggleSidebar }) => {
         </li>
       </NavLink>
       <NavLink
+        to="/PartiPolitique"
+        style={({ isActive }) => (isActive ? activeStyle : undefined)}
+      >
+        <li>
+          <FaUsers size={23} />
+          <span>Partis Politique</span>
+        </li>
+      </NavLink>
+      <NavLink
         to="/province/lists"
         style={({ isActive }) => (isActive ? activeStyle : undefined)}
       >
